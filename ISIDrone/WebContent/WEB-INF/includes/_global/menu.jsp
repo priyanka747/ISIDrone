@@ -14,7 +14,7 @@
 <!-- 						La recherche n'est pas fini d'être implementé -->
 						<form class="navbar-form" role="search" action="item?">
 							<div id="auto-search" class="form-group"  style="padding-right:0;">
-								<input class="form-control biginput" placeholder="Rechercher" id="autocomplete" type="text">
+								<input class="form-control biginput" placeholder="Search" id="autocomplete" type="text">
 							</div>
 					        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
 						</form>
@@ -40,10 +40,10 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="about">À Propos</a></li>
+					<li><a href="about">About</a></li>
 					<li><a href="service">Services</a></li>
 					<li><a href="contact">Contact</a></li>
-					<li><a href="items?category=1">Boutique</a></li>
+					<li><a href="items?category=1">Shop</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<jsp:include page="loginState.jsp" />

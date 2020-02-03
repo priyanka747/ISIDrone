@@ -21,9 +21,9 @@ if(user != null) {%>
 <li id="loginState">
 	<a href="#" id="user"><%=user.getFirstName()%></a>
 	<ul id="userAction" class="list-unstyled navbar navbar-default">
-		<li><a href="<%="order-history"%>">Historique commande</a></li>
+		<li><a href="<%="order-history"%>">Order History</a></li>
 		<li>&nbsp;</li>
-		<li><a href="login">Déconnexion</a></li>
+		<li><a href="login">Logout</a></li>
 	</ul>
 </li>
 <% }
@@ -31,8 +31,8 @@ else
 {
 	
 %>
-<li><a href="signup<%=(request.getParameter("fromCart") != null ? "?fromCart=true" : "")%>">S'enregistrer</a></li>
-<li id="loginState"><a href="login">Connexion</a></li>
+<li><a href="signup<%=(request.getParameter("fromCart") != null ? "?fromCart=true" : "")%>">Register</a></li>
+<li id="loginState"><a href="login">Login</a></li>
 <%	
 }
 %>

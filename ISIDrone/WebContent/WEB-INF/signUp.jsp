@@ -54,7 +54,7 @@ String error = (String)request.getAttribute("error");
 	  		</div>
 	  		<div class="panel-body">
 		  		<fieldset class="col-sm-6 col-lg-6 col-md-6">
-		  			<legend>Information Utilisateur</legend>
+		  			<legend>User Information</legend>
 <%
 if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("lastName")) {
 %>
@@ -64,7 +64,7 @@ if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("lastName")) {
 %>
 					<div class="form-group">
 						<div class="col-sm-10">
-							<label for="lastName" class="col-sm-2 control-label">*Nom</label>
+							<label for="lastName" class="col-sm-2 control-label">*Last Name</label>
 							<input type="text" id="lastName" class="form-control" name="lastName" value="<%=Misc.getOrDefault(hm_formParamValue, "lastName", "")%>" required />
 						</div>
 					</div>
@@ -77,7 +77,7 @@ if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("firstName")) {
 %>
 					<div class="form-group">
 						<div class="col-sm-10">
-							<label for="firstName" class="col-sm-2 control-label">*Prénom</label>
+							<label for="firstName" class="col-sm-2 control-label">*First Name</label>
 							<input type="text" id="firstName" class="form-control" name="firstName" value="<%=Misc.getOrDefault(hm_formParamValue, "firstName", "")%>" required />
 						</div>
 					</div>
@@ -116,7 +116,7 @@ if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("password")) {
 %>
 					<div class="form-group">
 						<div class="col-sm-10">
-							<label for="password" class="col-sm-2 control-label">*Mot&nbsp;de&nbsp;passe</label>
+							<label for="password" class="col-sm-2 control-label">*password</label>
 							<input type="password" id="password" class="form-control" name="password" required />
 						</div>
 					</div>
@@ -129,7 +129,7 @@ if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("confirmPassword")) 
 %>
 					<div class="form-group">
 						<div class="col-sm-10">
-							<label for="confirmPassword" class="col-sm-2 control-label" style="padding-top: 0px;">(Confirmation)<br />*Mot&nbsp;de&nbsp;passe</label>
+							<label for="confirmPassword" class="col-sm-2 control-label" style="padding-top: 0px;">*(Confirm) Password</label>
 							<input type="password" id="confirmPassword" class="form-control" name="confirmPassword" required />
 						</div>
 					</div>
@@ -145,7 +145,7 @@ if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("addr_no")) {
 %>
 					<div class="form-group">			
 						<div class="col-sm-10">
-							<label for="lastName" class="col-sm-2 control-label">*Numéro&nbsp;civique</label>
+							<label for="lastName" class="col-sm-2 control-label">*Civic Number</label>
 							<input type="text" id="addr_no" class="form-control" name="addr_no" value="<%=Misc.getOrDefault(hm_formParamValue, "addr_no", "")%>" required />
 						</div>
 					</div>
@@ -171,7 +171,7 @@ if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("addr_street")) {
 %>
 					<div class="form-group">
 						<div class="col-sm-10">
-							<label for="lastName" class="col-sm-2 control-label">*Rue</label>
+							<label for="lastName" class="col-sm-2 control-label">*street</label>
 							<input type="text" id="addr_street" class="form-control" name="addr_street" value="<%=Misc.getOrDefault(hm_formParamValue, "addr_street", "")%>" required />
 						</div>
 					</div>
@@ -184,7 +184,7 @@ if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("addr_zip")) {
 %>
 					<div class="form-group">
 						<div class="col-sm-10">
-							<label for="lastName" class="col-sm-2 control-label">*Code&nbsp;postal</label>
+							<label for="lastName" class="col-sm-2 control-label">*Postal Code</label>
 							<input type="text" id="addr_zip" class="form-control" name="addr_zip" value="<%=Misc.getOrDefault(hm_formParamValue, "addr_zip", "")%>" required />
 						</div>
 					</div>
@@ -197,7 +197,7 @@ if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("addr_city")) {
 %>
 					<div class="form-group">
 						<div class="col-sm-10">
-							<label for="lastName" class="col-sm-2 control-label">*Ville</label>
+							<label for="lastName" class="col-sm-2 control-label">*City</label>
 							<input type="text" id="addr_city" class="form-control" name="addr_city" value="<%=Misc.getOrDefault(hm_formParamValue, "addr_city", "")%>" required />
 						</div>
 					</div>
@@ -210,7 +210,7 @@ if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("addr_state")) {
 %>
 					<div class="form-group">	
 						<div class="col-sm-10">
-							<label for="lastName" class="col-sm-2 control-label">*Province</label>
+							<label for="lastName" class="col-sm-2 control-label">*State</label>
 							<input type="text" id="addr_state" class="form-control" name="addr_state" value="<%=Misc.getOrDefault(hm_formParamValue, "addr_state", "")%>" required />
 						</div>
 					</div>
@@ -223,7 +223,7 @@ if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("addr_country")) {
 %>
 					<div class="form-group">	
 						<div class="col-sm-10">
-							<label for="lastName" class="col-sm-2 control-label">*Pays</label>
+							<label for="lastName" class="col-sm-2 control-label">*Country</label>
 							<input type="text" id="addr_country" class="form-control" name="addr_country" value="<%=Misc.getOrDefault(hm_formParamValue, "addr_country", "")%>" required />
 						</div>
 					</div>
@@ -236,7 +236,7 @@ if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("addr_country")) {
 					}
 				%>
 				<div class="form-group text-center" style="clear: left; top: 15px; margin-bottom: 15px;">
-						<button type="submit" class="btn btn-default">S'enregistrer</button>
+						<button type="submit" class="btn btn-default">Register</button>
 				</div>
 			</div>
 		</form>
