@@ -20,7 +20,7 @@
             <div class="col-md-3">
             	<div class="panel panel-default">
                 	<div class="panel-heading">
-                		<p class="lead">Catégorie</p>
+                		<p class="lead">Categories</p>
                 	</div>
                 	<div class="list-group">
 <jsp:include page="<%=Const.PATH_CATEGORY_JSP%>"/>
