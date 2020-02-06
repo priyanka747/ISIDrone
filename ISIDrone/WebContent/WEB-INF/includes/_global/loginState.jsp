@@ -20,8 +20,9 @@ if(user == null && request.getAttribute("logout") == null) {
 if(user != null) {%>
 <li id="loginState">
 	<a href="#" id="user"><%=user.getFirstName()%></a>
+
 	<ul id="userAction" class="list-unstyled navbar navbar-default">
-		<li><a href="<%="order-history"%>">Order History</a></li>
+		<li><a href="ListProduct?category=1">All products</a></li>
 		<li>&nbsp;</li>
 		<li><a href="login">Logout</a></li>
 	</ul>
