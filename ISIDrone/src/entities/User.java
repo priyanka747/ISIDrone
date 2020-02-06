@@ -5,22 +5,34 @@ public class User {
 	String lastName,
 		firstName,
 		email,
-		password;
+		password,
+		role;
 	Address shipAddress;
 	
+
 	public User() {}
 	
 	public User(int id, String lastName, String firstName, String email,
-			String password, Address shipAddress) {
+			String password, String role, Address shipAddress ) {
 		super();
 		this.id = id;
 		this.lastName = lastName;
 		this.firstName = firstName;
 		this.email = email;
 		this.password = password;
+		this.role = role;
 		this.shipAddress = shipAddress;
 	}
 
+
+public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
 	public int getId() {
 		return id;
 	}
