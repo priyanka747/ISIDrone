@@ -12,9 +12,23 @@
 	ArrayList<Item> items = (ArrayList<Item>) request.getAttribute("items");
 %>
 
+<script type="text/javascript">
+$('.alert').style.display === "block";
+
+
+	
+$('.alert').alert('close');
+
+<!--
+
+//-->
+</script>
+
 <jsp:include page="<%=Const.PATH_HEAD_JSP%>"/>
 <jsp:include page="<%=Const.PATH_MENU_JSP%>"/>
    <div class="container">
+   <div   class="alert alert-danger" role="alert" data-dismiss="alert"> danger alert 
+</div>
 	 <div class="row">
          <div class="col-md-12">
          </div>
@@ -23,7 +37,7 @@
         <div class="row">
          <div class="col-md-12">
          <div class="table-responsive">
-  <table class="table">
+  <table class="table table-striped">
   	<thead class="thead-dark">
     <tr>
       <th scope="col">Name</th>
@@ -51,8 +65,8 @@ DecimalFormat df = new DecimalFormat("####0.00");
 		<td><%=item.getStock()%></td>
 		<td><%=item.isActive()%></td>
 		<td>
-		<button type="button" class="btn btn-warning">Warning</button>
-		<button type="button" class="btn btn-danger">Danger</button>
+		<a class="btn btn-primary" href="add-product" role="button" >Modify</a>
+		<a class="btn btn-outline-danger" href="" onclick="myFunction()" role="button">Delete</a>
 		</td>
 		</tr>
 <%
