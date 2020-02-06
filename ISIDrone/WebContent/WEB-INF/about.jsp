@@ -17,41 +17,60 @@
 	<!-- Team Members Row -->
 	<div class="row">
 		<div class="col-lg-12">
-			<h2 class="page-header">Our Team</h2>
+			<h3 class="page-header">Our Team</h3>
 		</div>
-		<div class="col-lg-6 col-sm-6 text-center">
+		
+		<div class="col col-sm-2 d-flex justify-content-center">
 			<img class="img-circle img-responsive img-center"
-				src="#" alt="Photo de Priyanka"
-				style="max-width: 250px; max-height: 250px; min-width: 250px;">
+				src="images/about/priyanka.jpg" alt="Photo de Laurent"
+				style="max-width: 100px; max-height: 100px; min-width: 100px;">
 			<h3>
-				Priyanka Thakker <small>Web Master</small>
+				Priyanka Thakker <br><small>Web Master</small>
 			</h3>
 		</div>
-		<div class="col-lg-4 col-sm-6 text-center">
+
+		<div class="col col-sm-2 d-flex justify-content-center">
 			<img class="img-circle img-responsive img-center"
-				src="#" alt="Photo de Rohini"
-				style="max-width: 250px; max-height: 250px; min-width: 250px;">
+				src="images/about/rohini1.jpeg" alt="Photo de Laurent"
+				style="max-width: 100px; max-height: 100px; min-width: 100px;">
 			<h3>
-				Rohini Lawrence <small>web Master</small>
+				Lawrence Rohini <br><small>Web Master</small>
 			</h3>
 		</div>
-		<div class="col-lg-6 col-sm-6 text-center">
+		<div class="col col-sm-2 d-flex justify-content-center">
 			<img class="img-circle img-responsive img-center"
-				src="#" alt="Photo de Priyank"
-				style="max-width: 250px; max-height: 250px; min-width: 250px;">
+				src="images/about/raj.jpeg" alt="Photo de Laurent"
+				style="max-width: 100px; max-height: 100px; min-width: 100px;">
 			<h3>
-				Priyank Patel <small>web Master</small>
+				Raj Prajapati <br><small>Web Master</small>
 			</h3>
 		</div>
-		<div class="col-lg-6 col-sm-6 text-center">
+		<div class="col col-sm-2 d-flex justify-content-center">
 			<img class="img-circle img-responsive img-center"
-				src="#" alt="Photo de Raj"
-				style="max-width: 250px; max-height: 250px; min-width: 250px;">
+				src="images/about/mit1.jpg" alt="Photo de Laurent"
+				style="max-width: 100px; max-height: 100px; min-width: 100px;">
 			<h3>
-				Raj Prajapati <small>web Master</small>
+				Mit Patel  <br><small>Web Master</small>
+			</h3>
+		</div>
+		<div class="col col-sm-2 d-flex justify-content-center">
+			<img class="img-circle img-responsive img-center"
+				src="images/about/jeel.jpg" alt="Photo de Laurent"
+				style="max-width: 100px; max-height: 100px; min-width: 100px;">
+			<h3>
+				Jeel Gandhi <br><small>Web Master</small>
+			</h3>
+		</div>
+		<div class="col col-sm-2 d-flex justify-content-center">
+			<img class="img-circle img-responsive img-center"
+				src="images/about/priyank.jpg" alt="Photo de Laurent"
+				style="max-width: 100px; max-height: 100px; min-width: 100px;">
+			<h3>
+				Priyank Patel <br><small>Web Master</small>
 			</h3>
 		</div>
 	</div>
 	<hr>
+</div>
 </div>
 	<jsp:include page="<%=Const.PATH_FOOTER_JSP%>" />
