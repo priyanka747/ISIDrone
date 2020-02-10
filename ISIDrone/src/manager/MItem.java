@@ -105,4 +105,27 @@ public class MItem {
 		}
 		return item;
 	}
+	public static Item removeItemById(int id) {
+		Item item = null;
+		try {
+			MDB.connect();
+			String query = "delete from product where id=?";
+			
+			PreparedStatement ps = MDB.getPS(query);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				item = getItemFromResultSet(rs);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			MDB.disconnect();
+		}
+		
+		return item;
+	}
 }

@@ -38,8 +38,8 @@ if(categories.size() > 0) {
 		<td><%=category.getName()%></td>
 		<td><%=category.getOrderOfAppearance()%></td>
 		<td>
-		<button type="button" class="btn btn-warning">Edit</button>
-		<button type="button" class="btn btn-danger">Delete</button>
+		<button type="button" class="btn btn-primary">Modify</button>
+		<button type="button" class="btn btn-outline-danger">Remove</button>
 		</td>
 		</tr>
 <%

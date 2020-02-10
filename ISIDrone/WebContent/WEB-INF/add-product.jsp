@@ -171,13 +171,10 @@
 				<%
 					}
 				%>
-				<div class="form-group">
-					<div class="col-sm-10">
-						<label for="isactive" class="col-sm-2 control-label" style="padding-top: 0px;">isActive	</label> 
-						
-							<input type="checkbox" name="isActive" value="isacctive" class="form-control" checked  required>				
-					</div>
-				</div>
+				<div class="form-group login-group-checkbox">
+				<input id="remember" name="remember" type="checkbox">
+				<label for="remember">do you want to make it live?</label>
+			</div>
 			</fieldset>
 			<%
 				if (request.getParameter("fromCart") != null) {
@@ -188,7 +185,7 @@
 			%>
 			<div class="form-group text-center "
 				style="clear: left; top: 15px; margin-bottom: 15px;">
-				<button type="submit" class="btn btn-default">Register</button>
+				<button type="submit" class="btn btn-default">Add..</button>
 			</div>
 		</div>
 	</form>

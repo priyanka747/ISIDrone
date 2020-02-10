@@ -64,8 +64,8 @@
 					        	<form method="post" id="form-add-item">
 					        		<input type="hidden" name="itemId" value="<%=item.getId()%>">
 							        <button type="submit" class="btn btn-info">
-										<span class="glyphicon glyphicon-shopping-cart"></span> Ajouter</button>
-										<input type="number" min="1" max="999" name="qty" class="item-qty form-control">
+										<span class="glyphicon glyphicon-shopping-cart"></span> Add</button>
+										<input type="number" value="1" min="1" max="999" name="qty" class="item-qty form-control">
 								</form>
 							</div>
 					    </div>
@@ -76,7 +76,7 @@
 	else {
 %>
 		<div class="alert alert-info">
-			Aucun produit ne correspond à votre demande.
+			No product corresponds to your request.
 		</div>
 <%
 	}

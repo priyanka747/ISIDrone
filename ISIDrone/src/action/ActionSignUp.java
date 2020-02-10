@@ -205,10 +205,10 @@ public class ActionSignUp {
 				break;
 			case 2:
 			case 3:
-				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" caractère(s).\n";
+				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" Character(s).\n";
 				break;
 			case 4:
-				errorMsg += "Lettre seulement, pas de chiffre ou de caractère spéciaux. Espace et trait d'union accepté, sauf s'ils ont au début ou à la fin du nom)";
+				errorMsg += "Lettre seulement, pas de chiffre ou de Character spéciaux. Espace et trait d'union accepté, sauf s'ils ont au début ou à la fin du nom)";
 				break;
 			case 5:
 				break;
@@ -226,9 +226,9 @@ public class ActionSignUp {
 				errorMsg += "Vous devez remplir le champ prénom.\n";
 			case 2:
 			case 3:
-				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" caractère(s).\n";
+				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" Character(s).\n";
 			case 4:
-				errorMsg += "Lettre seulement, pas de chiffre ou de caractère spéciaux. Espace et trait d'union accepté, sauf s'ils ont au début ou à la fin du nom)";
+				errorMsg += "Lettre seulement, pas de chiffre ou de Character spéciaux. Espace et trait d'union accepté, sauf s'ils ont au début ou à la fin du nom)";
 				break;
 			case 5:
 				break;
@@ -246,7 +246,7 @@ public class ActionSignUp {
 				errorMsg += "Vous devez remplir le champ email.\n";
 			case 2:
 			case 3:
-				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" caractère(s).\n";
+				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" Character(s).\n";
 			case 4:
 				errorMsg += "Veuillez entrez une adresse e-mail valide";
 			case 5:
@@ -283,9 +283,9 @@ public class ActionSignUp {
 				errorMsg += "Vous devez remplir le champ mot de passe.\n";
 			case 2:
 			case 3:
-				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" caractère(s).\n";
+				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" Character(s).\n";
 			case 4:
-				errorMsg += "Veuillez entrez une mot de passe comprenand au moins 1 minuscule, 1 majuscule, 1 chiffre et 1 caractère spécial.";
+				errorMsg += "Veuillez entrez une mot de passe comprenand au moins 1 minuscule, 1 majuscule, 1 chiffre et 1 Character spécial.";
 			case 5:
 				break;
 		}
@@ -320,7 +320,7 @@ public class ActionSignUp {
 				errorMsg += "Vous devez remplir le champ no.\n";
 			case 2:
 			case 3:
-				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" caractère(s).\n";
+				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" Character(s).\n";
 			case 4:
 				errorMsg += "Le champ n'accepte que les nombres ou lettres sans espace";
 			case 5:
@@ -338,7 +338,7 @@ public class ActionSignUp {
 			case 1:
 			case 2:
 			case 3:
-				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" caractère(s).\n";
+				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" Character(s).\n";
 			case 4:
 				errorMsg += "Le champ n'accepte que les chiffres et lettres";
 			case 5:
@@ -357,7 +357,7 @@ public class ActionSignUp {
 				errorMsg += "Vous devez remplir le champ rue.\n";
 			case 2:
 			case 3:
-				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" caractère(s).";
+				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" Character(s).";
 			case 4:
 			case 5:
 				break;
@@ -390,9 +390,9 @@ public class ActionSignUp {
 				errorMsg += "Vous devez remplir le champ ville.\n";
 			case 2:
 			case 3:
-				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" caractère(s).\n";
+				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" Character(s).\n";
 			case 4:
-				errorMsg += "Seules les lettres et le caractère d'espacement est accepté.";
+				errorMsg += "Seules les lettres et le Character d'espacement est accepté.";
 			case 5:
 				break;
 		}
@@ -409,9 +409,9 @@ public class ActionSignUp {
 				errorMsg += "Vous devez remplir le champ province.\n";
 			case 2:
 			case 3:
-				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" caractère(s).\n";
+				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" Character(s).\n";
 			case 4:
-				errorMsg += "Seules les lettres et le caractère d'espacement est accepté.";
+				errorMsg += "Seules les lettres et le Character d'espacement est accepté.";
 			case 5:
 				break;
 		}
@@ -428,9 +428,9 @@ public class ActionSignUp {
 				errorMsg += "Vous devez remplir le champ pays\n";
 			case 2:
 			case 3:
-				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" caractère(s).\n";
+				errorMsg += "Vous devez saisir entre "+restriction.getMinLength()+ " et "+restriction.getMaxLength()+" Character(s).\n";
 			case 4:
-				errorMsg += "Seules les lettres et le caractère d'espacement est accepté.";
+				errorMsg += "Seules les lettres et le Character d'espacement est accepté.";
 			case 5:
 				break;
 		}

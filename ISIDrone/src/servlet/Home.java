@@ -22,7 +22,7 @@ public class Home extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//Récupération des catégories
-		ActionCategory.getCategories(request, response);
+		ActionCategory.getActiveCategories(request, response);
 		//Récupération des produits en vedettes
 		ActionFeaturedProduct.getFeaturedProduct(request);
 		//Redirection

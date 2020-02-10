@@ -44,7 +44,8 @@ if(item != null) {
 	       		<div>
 		       		<input type="hidden" name="itemId" value="<%=item.getId()%>">
 			        <button type="submit" class="btn btn-info">
-						<span class="glyphicon glyphicon-shopping-cart"></span> Ajouter</button>
+						<span class="glyphicon glyphicon-shopping-cart"></span> Add
+						</button>
 						<input type="number" min="1" max="999" name="qty" class="item-qty form-control">
 				</div>
 			</form>
@@ -54,9 +55,9 @@ if(item != null) {
 else {
 %>
 		<div class="alert alert-info">
-			Aucun produit ne correspond à votre demande.
+			No product corresponds to your request.
 		</div>
-		<a href="items?category=1" class="btn btn-default">Retour à l'inventaire</a>
+		<a href="items?category=1" class="btn btn-default">Back To Shop</a>
 <%
 }
 %>

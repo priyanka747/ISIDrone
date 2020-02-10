@@ -22,8 +22,13 @@ if(user != null) {%>
 	<a href="#" id="user"><%=user.getFirstName()%></a>
 
 	<ul id="userAction" class="list-unstyled navbar navbar-default">
+	<% if(user.getRole().equals("admin")) { %>
 		<li><a href="ListProduct?category=1">All products</a></li>
-		<li>&nbsp;</li>
+		<li><a href="ListCategories">All Categories</a></li>
+		<%}else{ %>
+		<li><a href="ListCategories">Order History</a></li>
+		
+		<% }%>
 		<li><a href="login">Logout</a></li>
 	</ul>
 </li>

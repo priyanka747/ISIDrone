@@ -32,7 +32,7 @@ public class Items extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Si le paramètre category est présent
-		ActionCategory.getCategories(request, response);
+		ActionCategory.getActiveCategories(request, response);
 		ActionItems.getItems(request, response);
 		
 		request.getRequestDispatcher(Const.PATH_PAGE_ITEMS).forward(request, response);

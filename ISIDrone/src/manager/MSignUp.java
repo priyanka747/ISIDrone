@@ -26,7 +26,9 @@ public class MSignUp {
 				// Ajoute l'address a la BD
 				MSignUp.addAddress(user.getShipAddress());
 				
-				String query = "INSERT INTO user (`lastName`, `firstName`, `email`, `password`, `ship_address_id` , `role`) VALUES (?, ?, ?, ?, ?,?)";
+					
+				
+				String query = "INSERT INTO users (`lastName`, `firstName`, `email`, `password`, `ship_address_id` , `role`) VALUES (?, ?, ?, ?, ?,?)";
 				
 				PreparedStatement ps = MDB.getPS(query);
 			
@@ -35,6 +37,7 @@ public class MSignUp {
 				ps.setString(3, user.getEmail());
 				ps.setString(4, Hash.SHA1(user.getPassword()));
 				ps.setInt(5, user.getShipAddress().getId());
+				ps.setString(6, user.getRole());
 				
 				ps.executeUpdate();
 			} catch (SQLException | NoSuchAlgorithmException | UnsupportedEncodingException e) {
@@ -57,7 +60,7 @@ public class MSignUp {
 		try {
 			MDB.connect();
 			
-			String query = "SELECT id FROM user WHERE email = ?";
+			String query = "SELECT id FROM users WHERE email = ?";
 			PreparedStatement ps = MDB.getPS(query);
 			
 			ps.setString(1, user.getEmail());

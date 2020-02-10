@@ -9,12 +9,17 @@ import entities.Category;
 
 public class MCategory {
 
-	public static ArrayList<Category> getCategories(){
+	public static ArrayList<Category> getCategories(boolean isLive){
 		ArrayList<Category> categories = new ArrayList<Category>();
-
+		String query ;
 		try {
 			MDB.connect();
-			String query = "SELECT * FROM category";
+			if(isLive) {
+				
+				query =  "SELECT * FROM category";
+			}else {
+				query = "SELECT * FROM category where isActive=1";
+			}
 			ResultSet rs = MDB.execQuery(query);
 			while(rs.next()) {
 				categories.add(new Category(rs.getInt(1),rs.getInt(4), rs.getString(2), rs.getString(3)));	

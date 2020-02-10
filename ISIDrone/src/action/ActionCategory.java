@@ -8,9 +8,11 @@ import manager.MCategory;
 public class ActionCategory {
 	
 	public static void getCategories(HttpServletRequest request, HttpServletResponse response) {
-		request.setAttribute("categories", MCategory.getCategories());
+		request.setAttribute("categories", MCategory.getCategories(true));
 	}
-	
+	public static void getActiveCategories(HttpServletRequest request, HttpServletResponse response) {
+		request.setAttribute("categories", MCategory.getCategories(false));
+	}
 	public static int getSelectedCategory(HttpServletRequest request, HttpServletResponse response) {
 		//Permet de recevoir la catégorie sélectionné par l'utilisateur
 		String paramCategory = request.getParameter("category");

@@ -32,16 +32,14 @@ String error = (String)request.getAttribute("error");
 	 if(error.equals("accountExisting")) {
 %>
 		<div class="alert alert-info">
-			Un compte existe déjà pour cette adresse email.
+			An account already exists for this email address.
 		</div>
 <%
 	 }
 	 else if(error.equals("DBProblem")) {
 %>
 			<div class="alert alert-danger">
-				Une erreur de connexion c'est produite. Veuillez attendre quelques temps avant de faire une nouvelle tentative.
-				Si vous voyez ce message pour la deuxième fois, veuillez contactez l'administrateur du site pour lui informer du
-				problème.
+				A connection error has occurred. Please wait a while before trying again. If you see this message for the second time, please contact the site administrator to let them know about the problem.
 			</div>
 <%
 	 }
@@ -50,7 +48,7 @@ String error = (String)request.getAttribute("error");
     
 	  	<form action="signup" method="post" class="panel panel-primary form-horizontal" style="float: unset; margin: auto;">
 	  		<div class="panel-heading">
-	  			<h3 class="panel-title">Enregistrement d'un nouveau compte</h3>
+	  			<h3 class="panel-title">Registering a new account</h3>
 	  		</div>
 	  		<div class="panel-body">
 		  		<fieldset class="col-sm-6 col-lg-6 col-md-6">

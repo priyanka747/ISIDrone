@@ -30,7 +30,7 @@ if(hm_login == null)
 if(request.getAttribute("logout") != null) {
 %>
 	<div class="alert alert-success" role="alert">
-	  		Vous êtes maintenant déconnecté.
+	  		You are now logged out.
 	  	</div>
 <%	
 }
@@ -39,13 +39,13 @@ if(hm_errorMsg != null && !hm_errorMsg.get("loginState").equals("ok")) {
 %>
 <div class="panel panel-danger">
 	<div class="panel-heading">
- 		<h3 class="panel-title">Login Invalide</h3>
+ 		<h3 class="panel-title">Invalid Login</h3>
 	</div>
 	<ul class="panel-body">
 <%
 	if(hm_errorMsg != null && hm_errorMsg.get("loginState").equals("badEmailPassword")) {
 %>
-		<li style="margin-bottom: 0px; white-space: pre-line;">Mauvais combinaison Email/Mot de passe</li>
+		<li style="margin-bottom: 0px; white-space: pre-line;">Wrong Email or Password </li>
 <%
 	}
 	else if(hm_errorMsg != null && hm_errorMsg.get("loginState").equals("restrictionNotSatisfied")) {
@@ -69,22 +69,22 @@ if(hm_errorMsg != null && !hm_errorMsg.get("loginState").equals("ok")) {
 %>
 <form action="login" method="post" class="panel panel-primary form-horizontal" style="float: unset; margin: auto;">
 	<div class="panel-heading">
-		<h3 class="panel-title">Connexion</h3>
+		<h3 class="panel-title">Login</h3>
 	</div>
 	<div class="panel-body">
-		<fieldset class="col-sm-10 col-lg-10 col-md-10">
-			<legend>Informations de connexion</legend>
+		<fieldset class="col-sm-10 col-lg-12 col-md-10">
+			<legend>Enter login credentials</legend>
 			<div class="form-group">
 				<label for="login">E-mail: </label>
 				<input type="email" id="login" class="form-control" name="login" placeholder="toto@gmail.com" value="<%=Misc.getOrDefault(hm_login, "login", "")%>" required />
 			</div>
 			<div class="form-group">
-				<label for="password">Mot de passe: </label>
+				<label for="password">Password: </label>
 				<input type="password" id="password" class="form-control" name="password" required />
 			</div>
 			<div class="form-group login-group-checkbox">
 				<input id="remember" name="remember" type="checkbox">
-				<label for="remember">Connexion automatique</label>
+				<label for="remember">Remember Me</label>
 			</div>
 <%
 				if(request.getParameter("fromCart") != null) {
@@ -93,7 +93,7 @@ if(hm_errorMsg != null && !hm_errorMsg.get("loginState").equals("ok")) {
 <%
 				}
 %>
-			<button type="submit" class="btn btn-default">Connexion</button>
+			<button type="submit" class="btn btn-default">Login</button>
 		</fieldset>
 	</div>
 </form>
