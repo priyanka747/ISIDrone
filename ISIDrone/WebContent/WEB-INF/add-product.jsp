@@ -175,10 +175,7 @@
 					<div class="col-sm-10">
 						<label for="isactive" class="col-sm-2 control-label" style="padding-top: 0px;">isActive	</label> 
 						
-							<input type="checkbox" name="isActive" value="isacctive" class="form-control" checked  required>
-							
-
-							
+							<input type="checkbox" name="isActive" value="isacctive" class="form-control" checked  required>				
 					</div>
 				</div>
 			</fieldset>

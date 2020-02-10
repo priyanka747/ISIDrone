@@ -16,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> jsp default meta-->
-    <title>Drone pour tout le monde</title>
+    <title>Drone For Everyone</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

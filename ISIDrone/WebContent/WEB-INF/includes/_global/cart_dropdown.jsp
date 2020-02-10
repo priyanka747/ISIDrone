@@ -39,12 +39,12 @@
 		%>
 			<li class="divider"></li>
 	      
-	     	<li id="dd-info" class="text-center"><a href="cart">Commander</a></li>
+	     	<li id="dd-info" class="text-center"><a href="cart">Order</a></li>
 		<%
 		}else{
 			%>
 				<li id="dd-info" class="text-center">
-					<span>Le panier est vide</span>
+					<span>The cart is empty</span>
 				</li>
 			<%
 		}
