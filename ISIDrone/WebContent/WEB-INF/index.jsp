@@ -34,7 +34,7 @@
             <jsp:include page="<%=Const.PATH_MENU_BANNER%>"/>   
 
                 <div class="row">
-                <h2 style="margin-top: 0px; margin-bottom: 10px; text-align: center; font-size: 72px; text-decoration: underline; color: rgb(51, 51, 51);">Products on sale</h2>
+                <h2 style="margin-top: 0px; margin-bottom: 10px; text-align: center; font-size: 72px; text-decoration: underline; color: rgb(51, 51, 51);">Produits en vedette</h2>
 <%
 	//Format a deux decimal
 	DecimalFormat df = new DecimalFormat("####0.00");
@@ -66,8 +66,8 @@
 					        	<form method="post" id="form-add-item">
 					        		<input type="hidden" name="itemId" value="<%=item.getId()%>">
 							        <button type="submit" class="btn btn-info">
-										<span class="glyphicon glyphicon-shopping-cart"></span> Add</button>
-										<input type="number" value="1" min="1" max="999" name="qty" class="item-qty form-control">
+										<span class="glyphicon glyphicon-shopping-cart"></span> Ajouter</button>
+										<input type="number" min="1" max="999" name="qty" class="item-qty form-control">
 								</form>
 							</div>
 					    </div>

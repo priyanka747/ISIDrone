@@ -31,7 +31,6 @@ $('.alert').alert('close');
 </div>
 	 <div class="row">
          <div class="col-md-12">
-         <a type="button" class="btn btn-primary" href="add-product">Add Product</a>
          </div>
          </div>
          
@@ -45,7 +44,7 @@ $('.alert').alert('close');
       <th scope="col">Category</th>
       <th scope="col">Description</th>
       <th scope="col">Price</th>
-      <!-- <th scope="col">Serial number</th>-->
+      <th scope="col">Serial number</th>
       <th scope="col">Items in stock</th>
       <th scope="col">Product is active</th>
       <th scope="col">Action</th>
@@ -57,16 +56,16 @@ DecimalFormat df = new DecimalFormat("####0.00");
 	if(items.size() > 0) {
 		for(Item item : items) {
 %>
-		<tr>
+		 <tr>
 		<td><%=item.getName()%></td>
 		<td><%=item.getCategory()%></td>
 		<td><%=item.getDescription().substring(0,20)+" ..."%></td>
 		<td><%=item.getPrice()%></td>
-		<!-- <td><%=item.getSerial()%></td> -->
+		<td><%=item.getSerial()%></td>
 		<td><%=item.getStock()%></td>
 		<td><%=item.isActive()%></td>
 		<td>
-		<a class="btn btn-primary" href="add-product?product_id=<%= item.getId() %>" role="button" >Modify</a>
+		<a class="btn btn-primary" href="add-product" role="button" >Modify</a>
 		<a class="btn btn-outline-danger" href="" onclick="myFunction()" role="button">Delete</a>
 		</td>
 		</tr>
@@ -76,7 +75,7 @@ DecimalFormat df = new DecimalFormat("####0.00");
 	else {
 %>
 		<tr>
-		<td colspan="8" class="text-center">No Products Found</td>
+		<td colspan="8">No Products Found</td>
 		</tr>
 <%
 	}

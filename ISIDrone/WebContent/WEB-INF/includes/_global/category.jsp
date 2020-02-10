@@ -15,8 +15,8 @@
 	}
 	else {
 %>
-					
-					No Categories Available At The Moment
+					Aucune Catégorie n'est présente pour le moment.
+					No Categories Available
 <%
 	}
 %>
