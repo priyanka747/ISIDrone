@@ -15,7 +15,11 @@ ArrayList<Category> categories = (ArrayList<Category>) request.getAttribute("cat
 <jsp:include page="<%=Const.PATH_HEAD_JSP%>"/>
 <jsp:include page="<%=Const.PATH_MENU_JSP%>"/>
    <div class="container">
-
+	 <div class="row">
+         <div class="col-md-12">
+         <a type="button" class="btn btn-primary" href="add-category">Add Category</a>
+         </div>
+         </div>
         <div class="row">
          <div class="col-md-12">
          <div class="table-responsive">
