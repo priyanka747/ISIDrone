@@ -34,11 +34,8 @@
 				1er étage<br>
 				Montréal (Québec)<br>
 				H2K 4S1<br>
-				<!-- 255 boul. Crémazie Est<br>
-				bureau 100<br>
-				Montréal (Québec)<br>
-				H2M 1M2<br> -->
-				<abbr title="Téléphone">Tel:</abbr> (514) 842-2426
+				Email:info@isi-mtl.com<br>
+				<abbr title="phone">Tel:</abbr> (514) 842-2426
 			</address>
                 </div>
                 <div class="span8">
