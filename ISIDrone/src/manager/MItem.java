@@ -128,4 +128,75 @@ public class MItem {
 		
 		return item;
 	}
+	
+	public static void addItem(	int category, int stock, String name, String description, String serialNum ,double price, boolean isActive) {
+		
+		
+		try {
+			MDB.connect();
+			String query = "INSERT INTO `product` (`category`, `name`, `description`, `price`, `serialNumber`, `stockQty`, `isActive`) VALUES  (?,?,?,?,?,?,? )";
+			
+			PreparedStatement ps = MDB.getPS(query);
+			ps.setInt(1, category);
+			ps.setString(2, name);
+			ps.setString(3, description);
+			ps.setDouble(4, price);
+			ps.setString(5, serialNum);
+			ps.setInt(6, stock);
+			ps.setBoolean(7, isActive);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			MDB.disconnect();
+		}
+		
+		
+	}
+	
+	public static void getModifyInfo(int id) {
+		
+		Item item=getItemById(id);
+		
+			//returns the content of the item;
+		
+		
+	}
+public static void modifyItem(int category, int stock, String name, String description, String serialNum ,double price, boolean isActive, int id) {
+		
+		Item item=getItemById(id);
+		
+			//returns the content of the item;
+		
+	
+				try {
+					MDB.connect();
+					String query = "UPDATE `product` SET `category`=[?],`name`=[?],`description`=[?],`price`=[?],`serialNumber`=[?],`stockQty`=[?],`isActive`=[?] WHERE id = '?'";
+					
+					PreparedStatement ps = MDB.getPS(query);
+					ps.setInt(1, category);
+					ps.setString(2, name);
+					ps.setString(3, description);
+					ps.setDouble(4, price);
+					ps.setString(5, serialNum);
+					ps.setInt(6, stock);
+					ps.setBoolean(7, isActive);
+					ps.setInt(8, id);
+					
+					ResultSet rs = ps.executeQuery();
+					
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				finally {
+					MDB.disconnect();
+				}
+	}
+	
+	
 }
