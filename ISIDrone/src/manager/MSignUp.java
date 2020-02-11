@@ -37,7 +37,7 @@ public class MSignUp {
 				ps.setString(3, user.getEmail());
 				ps.setString(4, Hash.SHA1(user.getPassword()));
 				ps.setInt(5, user.getShipAddress().getId());
-				ps.setString(6, user.getRole());
+				ps.setString(6, "customer");
 				
 				ps.executeUpdate();
 			} catch (SQLException | NoSuchAlgorithmException | UnsupportedEncodingException e) {

@@ -7,7 +7,7 @@
     <!-- Page Content -->
     <div class="container">
 	  	<div class="alert alert-success" role="alert">
-	  		Enregistrement complété avec succès. Vous pouvez désormais vous connecter au site.
+	  		Registration successfully completed. You can now connect to the site.
 	  	</div>
     </div>
 <!-- Footer -->
