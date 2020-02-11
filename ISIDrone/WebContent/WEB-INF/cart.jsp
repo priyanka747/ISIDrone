@@ -22,10 +22,10 @@
 
 <div class="container">
 	<div class="progress-cart">
-		<span class="label label-success">Panier</span>
-		<span class="label label-warning">Sommaire</span>
-		<span class="label label-warning">Compte</span>
-		<span class="label label-warning">Facture</span>
+		<span class="label label-success">Basket</span>
+		<span class="label label-warning">Summary</span>
+		<span class="label label-warning">Account</span>
+		<span class="label label-warning">Invoice</span>
 	</div>
     <%if ( cart != null && ! cart.isEmpty()){ %>
     	<div class="row">
@@ -55,7 +55,7 @@
 		                                <h5 class="media-heading"> No: <%=itemC.getSerial()%></h5>
 		                                <h5 class="media-heading"> Stock: <span id="stock-qty-<%=itemC.getSerial()%>"><%=itemC.getStock()%></span></h5>
 		                                <span>Status: </span><span id="stock-status-<%=itemC.getSerial()%>" class="stock-status <%=((itemC.inStock())?"text-success":"text-warning")%>">
-		                                	<strong><%=((itemC.inStock())?"En stock":"Stock Insufisant")%></strong></span>
+		                                	<strong><%=((itemC.inStock())?"In stock":" Insufficient Stock")%></strong></span>
 		                            </div>
 		                        </div>
 	                        </td>
@@ -82,7 +82,7 @@
 	                        <td>   </td>
 	                        <td>   </td>
 	                        <td>   </td>
-	                        <td><h5>Livraison estimée</h5></td>
+	                        <td><h5>Estimated Delivery</h5></td>
 	                        <td class="text-right"><h5><strong  id="cart-shipping"><%=df.format(cart.generateShipCost())%>$</strong></h5></td>
 	                    </tr>
 	                    <tr>
@@ -98,7 +98,7 @@
 	                        
 	                        <td>
 		                        <button type="submit" name="back" class="btn btn-default">
-		                            <span class="glyphicon glyphicon-shopping-cart"></span> Continuer Achats
+		                            <span class="glyphicon glyphicon-shopping-cart"></span>Continue Shopping
 		                        </button>
 	                        </td>
 	                        <td>
@@ -108,7 +108,7 @@
 	                        </td>
 	                        <td>
 		                        <button type="submit" name="checkout" class="btn btn-success">
-		                            Acheter <span class="glyphicon glyphicon-play"></span>
+		                            Check Out <span class="glyphicon glyphicon-play"></span>
 		                        </button>
 	                        </td>
 	                    </tr>

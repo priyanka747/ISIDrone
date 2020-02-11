@@ -1,5 +1,6 @@
 package manager;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,10 +12,13 @@ public class MDB {
 	private static Connection connection = null;
 	
 	public static void connect() throws SQLException {
+		PropertyValues properties = new PropertyValues();
+		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String mysqlURL="jdbc:mysql://127.0.0.1:3306/isidrone?serverTimezone=UTC";
-			connection = DriverManager.getConnection(mysqlURL, "root", "abc123...");
+			String mysqlURL="jdbc:mysql://"+properties.getIp()+":"+properties.getPort()+"/"+properties.getDbnm()+"?serverTimezone=UTC";
+			System.out.println(mysqlURL+" "+properties.getUnm()+properties.getPwd());
+			connection = DriverManager.getConnection(mysqlURL, properties.getUnm(), properties.getPwd());
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}

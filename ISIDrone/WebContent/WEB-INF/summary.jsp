@@ -17,10 +17,10 @@
 <jsp:include page="<%=Const.PATH_MENU_JSP%>"/>
 <div class="container">
 	<div class="progress-cart">
-		<span class="label label-success">Panier</span>
-		<span class="label label-success">Sommaire</span>
-		<span class="label label-warning">Compte</span>
-		<span class="label label-warning">Facture</span>
+		<span class="label label-success">Basket</span>
+		<span class="label label-success">Summary</span>
+		<span class="label label-warning">Account</span>
+		<span class="label label-warning">Invoice</span>
 	</div>
 	<div class="row">
     	<div class="col-md-12">
@@ -34,9 +34,9 @@
     						<thead>
                                 <tr>
         							<td><strong>Item</strong></td>
-        							<td class="text-center"><strong>Prix</strong></td>
-        							<td class="text-center"><strong>Quantité</strong></td>
-        							<td class="text-right"><strong>Totaux</strong></td>
+        							<td class="text-center"><strong>Price</strong></td>
+        							<td class="text-center"><strong>Quantity</strong></td>
+        							<td class="text-right"><strong>Total</strong></td>
                                 </tr>
     						</thead>
     						<tbody>
@@ -55,13 +55,13 @@
     							<tr>
     								<td class="thick-line"></td>
     								<td class="thick-line"></td>
-    								<td class="thick-line text-center"><strong>Sous-Total</strong></td>
+    								<td class="thick-line text-center"><strong>sub-Total</strong></td>
     								<td class="thick-line text-right"><%=df.format(cart.generateSubTotal())%>$</td>
     							</tr>
     							<tr>
     								<td class="no-line"></td>
     								<td class="no-line"></td>
-    								<td class="no-line text-center"><strong>Livraison</strong></td>
+    								<td class="no-line text-center"><strong>Delivery</strong></td>
     								<td class="no-line text-right"><%=df.format(cart.generateShipCost())%>$</td>
     							</tr>
     							<tr>

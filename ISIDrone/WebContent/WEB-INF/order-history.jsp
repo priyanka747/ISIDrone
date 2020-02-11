@@ -21,7 +21,7 @@
     	<div class="col-md-12">
     		<div class="panel panel-default">
     			<div class="panel-heading">
-    				<h3 class="panel-title"><strong>Historique des commandes</strong></h3>
+    				<h3 class="panel-title"><strong>Order History</strong></h3>
     			</div>
     			<div class="panel-body">
     				<div class="table-responsive">
@@ -33,14 +33,14 @@
                                 <tr>
         							<td><strong>ID</strong></td>
         							<td class="text-center"><strong>Date</strong></td>
-        							<td class="text-center"><strong>Nombre d'item</strong></td>
+        							<td class="text-center"><strong>Number of item</strong></td>
         							<td class="text-right"><strong>Total</strong></td>
                                 </tr>
     						</thead>
     						<%
     							}else{
     						%>
-    							<span>Aucune commande</span>
+    							<span>No Orders</span>
     						<%
     							}
     						%>
