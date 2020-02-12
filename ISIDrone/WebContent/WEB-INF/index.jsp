@@ -77,8 +77,8 @@
 	}
 	else {
 %>
-		<div class="alert alert-info">
-			Aucun produit en vedette pour le moment.
+		<div class="alert alert-info text-center">
+			No Product On Sale For The Moment
 		</div>
 <%
 	}

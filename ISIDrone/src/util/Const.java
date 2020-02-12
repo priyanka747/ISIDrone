@@ -44,6 +44,7 @@ public class Const {
 	public static String PATH_PAGE_SERVICE = PATH_PRIVATE + "service.jsp";
 	public static String PATH_PAGE_LIST_PRODUCT = PATH_PRIVATE + "listProduct.jsp?category=1";
 	public static String PATH_PAGE_LIST_CATEGORIES = PATH_PRIVATE + "listCategories.jsp";
+	public static String PATH_PAGE_LIST_ORDERS = PATH_PRIVATE + "listorders.jsp";
 	public static String PATH_PAGE_ADD_PRODUCT = PATH_PRIVATE + "add-product.jsp";
 	public static String PATH_PAGE_ADD_CATEGORY = PATH_PRIVATE + "add-category.jsp";
 	// Index

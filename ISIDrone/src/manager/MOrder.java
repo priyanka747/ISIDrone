@@ -6,7 +6,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import action.ActionLogin;
 import entities.Cart;
+import entities.Category;
 import entities.Item;
 import entities.ItemCart;
 import entities.Order;
@@ -131,6 +136,31 @@ public class MOrder {
 		}
 		
 		return orderList;
+	}
+	public static ArrayList<Order> getOrders(HttpServletRequest request, HttpServletResponse response){
+		ArrayList<Order> orders = new ArrayList<Order>();
+		String query ;
+		try {
+			MDB.connect();
+					
+				query =  "SELECT * FROM orders";
+			
+
+				
+			ResultSet rs = MDB.execQuery(query);
+			while(rs.next()) {
+				User user=ActionLogin.getUserById(rs.getInt("user_id"), request, response);
+				orders.add(new Order(rs.getInt("id"),user,rs.getString("date"),rs.getBoolean("isShipped")));	
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			MDB.disconnect();	
+		}
+		
+		return orders;
 	}
 	
 }

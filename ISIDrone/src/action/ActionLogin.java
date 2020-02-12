@@ -1,5 +1,8 @@
 package action;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Pattern;
@@ -8,10 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import manager.MCookies;
+import manager.MDB;
+import manager.MItem;
 import manager.MLogin;
 import util.Restriction;
 import util.ResultValidation;
 import util.Validation;
+import entities.Item;
 import entities.SingleEntry; 
 import entities.User;
 
@@ -147,5 +153,8 @@ public class ActionLogin {
 		}
 		
 		return errorMsg;
+	}
+	public static User getUserById(int id, HttpServletRequest request, HttpServletResponse response) {
+		return MLogin.getUserById(id);
 	}
 }

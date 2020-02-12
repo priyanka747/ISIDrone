@@ -48,8 +48,8 @@ public class MItem {
 			
 			PreparedStatement ps = MDB.getPS(query);
 			ps.setInt(1, id);
-			ResultSet rs = ps.executeQuery();
 			
+			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				item = getItemFromResultSet(rs);
 			}
@@ -105,19 +105,16 @@ public class MItem {
 		}
 		return item;
 	}
-	public static Item removeItemById(int id) {
-		Item item = null;
+	public static boolean removeItemById(int id) {
+	
 		try {
 			MDB.connect();
 			String query = "delete from product where id=?";
 			
 			PreparedStatement ps = MDB.getPS(query);
 			ps.setInt(1, id);
-			ResultSet rs = ps.executeQuery();
-			
-			while(rs.next()) {
-				item = getItemFromResultSet(rs);
-			}
+			int rs = ps.executeUpdate();
+			System.out.println(rs);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -126,7 +123,7 @@ public class MItem {
 			MDB.disconnect();
 		}
 		
-		return item;
+		return true;
 	}
 	
 	public static void addItem(	int category, int stock, String name, String description, String serialNum ,double price, boolean isActive) {

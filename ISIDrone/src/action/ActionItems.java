@@ -14,5 +14,11 @@ public class ActionItems {
 	public static void getItemById(int id, HttpServletRequest request, HttpServletResponse response) {
 		request.setAttribute("item", MItem.getItemById(id));
 	}
+
+	public static void removeItem(int id, HttpServletRequest request, HttpServletResponse response) {
+		MItem.removeItemById(id);
+		
+		
+	}
 	
 }

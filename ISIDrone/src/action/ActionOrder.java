@@ -2,9 +2,13 @@ package action;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import entities.Cart;
 import entities.Order;
 import entities.User;
+import manager.MItem;
 import manager.MOrder;
 import manager.MSendMail;
 
@@ -26,8 +30,8 @@ public class ActionOrder {
 	private static void sendEmail(String to){
 		
 		// Envoie d'un email de confirmation
-		String sujet = "Achat completé";
-		String message = "Félicitation, vous avez commander quelquechose.";
+		String sujet = "Payment Complete";
+		String message = "congratulations, Your order Placed Successfully";
 		
 		MSendMail.sendEmail(message, to, sujet);
 		
@@ -37,5 +41,9 @@ public class ActionOrder {
 		List<Order> orderList = MOrder.getAllOrdersByUserId(userId);
 		
 		return orderList;
+	}
+
+	public static void getOrders(HttpServletRequest request, HttpServletResponse response) {
+		request.setAttribute("orders",MOrder.getOrders(request,response));
 	}
 }

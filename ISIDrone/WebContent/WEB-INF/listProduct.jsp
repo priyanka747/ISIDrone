@@ -54,8 +54,8 @@ DecimalFormat df = new DecimalFormat("####0.00");
 		<td><%=item.getStock()%></td>
 		<td><%=item.isActive()%></td>
 		<td>
-		<a class="btn btn-primary" href="add-product?product_id=<%= item.getId() %>" role="button" >Modify</a>
-		<a class="btn btn-outline-danger" href="" onclick="myFunction()" role="button">Remove</a>
+		<a class="btn btn-primary" href="add-product?a=1&product_id=<%= item.getId() %>" role="button" >Modify</a>
+		<a class="btn btn-outline-danger" href="add-product?a=2&product_id=<%= item.getId() %>" onclick="return confirm('Are you sure you want to delete this item?');" role="button">Remove</a>
 		</td>
 		</tr>
 <%
