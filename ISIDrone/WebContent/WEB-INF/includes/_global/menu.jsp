@@ -1,7 +1,21 @@
+<%@page import="util.Const"%>
+<%@page import="manager.MLogin"%>
+<%@page import="action.ActionLogin"%>
+<%@page import="manager.MCookies"%>
+<%@ page import="entities.User"%>
+<% 
+User user = (User)session.getAttribute("user");
+if(user == null && request.getAttribute("logout") == null) {
+	user = ActionLogin.getUserFromAutoLogin(request);
+	session.setAttribute("user", user);
+} %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <%@ page import="util.Const"%>
+
+
 
 <!-- Navigation -->
 <div class="container">
@@ -43,7 +57,9 @@
 					<li><a href="about">About</a></li>
 					<li><a href="service">Services</a></li>
 					<li><a href="contact">Contact</a></li>
+					<% if(user==null|| !user.getRole().equals("admin")){%>
 					<li><a href="items?category=1">Shop</a></li>
+					<%} %>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<jsp:include page="loginState.jsp" />

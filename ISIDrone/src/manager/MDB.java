@@ -16,7 +16,12 @@ public class MDB {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
+<<<<<<< HEAD
 			
+=======
+			String mysqlURL="jdbc:mysql://127.0.0.1:3306/isidrone?serverTimezone=UTC";
+			connection = DriverManager.getConnection(mysqlURL, "root", "admin");
+>>>>>>> refs/remotes/origin/master
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
