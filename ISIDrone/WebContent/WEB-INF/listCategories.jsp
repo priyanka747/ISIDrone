@@ -43,8 +43,8 @@ if(categories.size() > 0) {
 		<td><%=category.getOrderOfAppearance()%></td>
 		<td>
 		
-		<button type="button" class="btn btn-primary">Modify</button>
-		<a type="button"  href="delete?id=<%= category.getId() %>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');"  >Remove</a>
+		<a class="btn btn-primary" href="add-product?a=1&product_id=<%= category.getId() %>" role="button" >Modify</a>
+		<a class="btn btn-outline-danger" href="add-product?a=2&product_id=<%= category.getId() %>" onclick="return confirm('Are you sure you want to delete this item?');" role="button">Remove</a>
 		
 		</td>
 		</tr>

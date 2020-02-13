@@ -1,3 +1,6 @@
+<%@page import="entities.Category"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="entities.Item"%>
 <%@page import="util.Misc"%>
 <%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -14,6 +17,18 @@
 	HashMap<String, String> hm_fieldErrorMsg = (HashMap<String, String>) request
 			.getAttribute("hm_fieldErrorMsg");
 	String error = (String) request.getAttribute("error");
+	
+	ArrayList<Category> categories = (ArrayList<Category>) request.getAttribute("categories");
+	
+	int action=Integer.parseInt(request.getParameter("a"));
+	Item item=null;
+	System.out.println(this.getServletContext().getContextPath()+" "+this.getServletContext().getRealPath("/"));
+	if(action==1){
+		item = (Item)request.getAttribute("item");
+		
+	}
+	
+		
 %>
 <!-- Page Content -->
 <div class="container">
@@ -31,23 +46,18 @@
 	%>
 	<%
 		if (error != null) {
-			if (error.equals("accountExisting")) {
+			 if (error.equals("DBProblem")) {
 	%>
-	<div class="alert alert-info">Un compte existe déjà pour cette
-		adresse email.</div>
-	<%
-		} else if (error.equals("DBProblem")) {
-	%>
-	<div class="alert alert-danger">Une erreur de connexion c'est
-		produite. Veuillez attendre quelques temps avant de faire une nouvelle
-		tentative. Si vous voyez ce message pour la deuxième fois, veuillez
-		contactez l'administrateur du site pour lui informer du problème.</div>
+	<div class="alert alert-danger">A connection error is produced.
+		Please wait a while before making a new one attempt. If you see this
+		message for the second time, please contact the site administrator to
+		inform them of the problem.</div>
 	<%
 		}
 		}
 	%>
 
-	<form action="signup" method="post"
+	<form action="AddProduct>" method="post"
 		class="panel panel-primary form-horizontal"
 		style="float: unset; margin: auto;">
 		<div class="panel-heading">
@@ -55,7 +65,13 @@
 		</div>
 		<div class="panel-body">
 			<fieldset class="col-sm-6 col-lg-6 col-md-6">
+			
 				<legend>New Product Information</legend>
+				<input type="hidden" id="id" value=<%= item!=null?item.getName():"" %>
+							class="form-control" name="id"
+							}
+							value="<%=Misc.getOrDefault(hm_formParamValue, "Name", "")%>"
+							/>
 				<%
 					if (hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("lastName")) {
 				%>
@@ -67,7 +83,9 @@
 				<div class="form-group">
 					<div class="col-sm-10">
 						<label for="Name" class="col-sm-2 control-label">Name</label> <input
-							type="text" id="Name" class="form-control" name="Name"
+							type="text" id="Name" value="<%= item!=null?item.getName():"" %>" 
+							class="form-control" name="Name"
+							}
 							value="<%=Misc.getOrDefault(hm_formParamValue, "Name", "")%>"
 							required />
 					</div>
@@ -82,11 +100,25 @@
 				%>
 				<div class="form-group">
 					<div class="col-sm-10">
-						<label for="Category" class="col-sm-2 control-label">Category</label>
-						<input type="text" id="Category" class="form-control"
-							name="Category"
+						<label for="category" class="col-sm-2 control-label">Category</label>
+						<!-- <input type="text" id="category" class="form-control"
+							name="category"
 							value="<%=Misc.getOrDefault(hm_formParamValue, "Category", "")%>"
-							required />
+							required />-->
+						<select id="Category" class="form-control" name="Category">
+							<option value="">select category</option>
+							<%
+								if (categories.size() > 0) {
+									for (Category category : categories) {
+							%>
+
+							<option value=<%=category.getId()%>
+								<%=item!=null?(category.getId() == item.getCategory() ? "selected" : ""):""%>><%=category.getName()%></option>
+							<%
+								}
+								}
+							%>
+						</select>
 					</div>
 				</div>
 				<%
@@ -99,9 +131,25 @@
 				%>
 				<div class="form-group">
 					<div class="col-sm-10">
-						<label for="email" class="col-sm-2 control-label">Description</label>
-						<input type="email" id="email" class="form-control" name="email"
-							value="<%=Misc.getOrDefault(hm_formParamValue, "email", "")%>"
+						<label for="desc" class="col-sm-2 control-label">Description</label>
+						<textarea id="desc" class="form-control" name="desc" rows="7"
+							required><%=item != null ? item.getDescription() : ""%></textarea>
+					</div>
+				</div>
+				<%
+					if (hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("confirmEmail")) {
+				%>
+				<div class="alert alert-warning"
+					style="margin-bottom: 0px; white-space: pre-line;"><%=hm_fieldErrorMsg.get("confirmEmail")%></div>
+				<%
+					}
+				%>
+				<div class="form-group">
+					<div class="col-sm-10">
+						<label for="price" class="col-sm-2 control-label"
+							style="padding-top: 0px;">price </label> <input type="number"
+							id="price" class="form-control" name="price"
+							placeholder="" value="<%=item != null ? item.getPrice() : ""%>"
 							required />
 					</div>
 				</div>
@@ -115,37 +163,18 @@
 				%>
 				<div class="form-group">
 					<div class="col-sm-10">
-						<label for="confirmEmail" class="col-sm-2 control-label"
-							style="padding-top: 0px;">price
-						</label> <input type="number" id="confirmEmail" class="form-control"
-							name="confirmEmail" placeholder=""
-							value="<%=Misc.getOrDefault(hm_formParamValue, "confirmEmail", "")%>"
-							required />
+						<label for="serial" class="col-sm-2 control-label"
+							style="padding-top: 0px;">serial number </label> <input
+							type="text" id="serial" class="form-control"
+							name="serial" placeholder=""
+							value="<%=item != null ? item.getSerial() : ""%>" required />
 					</div>
 				</div>
-				<%
-					if (hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("confirmEmail")) {
-				%>
-				<div class="alert alert-warning"
-					style="margin-bottom: 0px; white-space: pre-line;"><%=hm_fieldErrorMsg.get("confirmEmail")%></div>
-				<%
-					}
-				%>
-				<div class="form-group">
-					<div class="col-sm-10">
-						<label for="confirmEmail" class="col-sm-2 control-label"
-							style="padding-top: 0px;">serial number
-						</label> <input type="email" id="confirmEmail" class="form-control"
-							name="confirmEmail" placeholder=""
-							value="<%=Misc.getOrDefault(hm_formParamValue, "confirmEmail", "")%>"
-							required />
-					</div>
-				</div>
-				
+
 			</fieldset>
 			<fieldset class="col-sm-6 col-lg-6 col-md-6">
-			<legend>Product Details</legend>
-			<%
+				<legend>Product Details</legend>
+				<%
 					if (hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("confirmEmail")) {
 				%>
 				<div class="alert alert-warning"
@@ -156,11 +185,9 @@
 				<div class="form-group">
 					<div class="col-sm-10">
 						<label for="stock" class="col-sm-2 control-label"
-							style="padding-top: 0px;">Stock
-						</label> <input type="number" id="stock" class="form-control"
-							name="stock" 
-							value="<%=Misc.getOrDefault(hm_formParamValue, "confirmEmail", "")%>"
-							required />
+							style="padding-top: 0px;">Stock </label> <input type="number"
+							id="stock" class="form-control" name="stock"
+							value="<%=item != null ? item.getStock() : ""%>" required />
 					</div>
 				</div>
 				<%
@@ -172,9 +199,11 @@
 					}
 				%>
 				<div class="form-group login-group-checkbox">
-				<input id="remember" name="remember" type="checkbox">
-				<label for="remember">do you want to make it live?</label>
-			</div>
+					<input id="isactive" name="isactive" type="checkbox"
+						<%=item != null ? (item.isActive() ? "checked" : "") : " "%> id="isactive"
+						name="isactive"> <label for="isactive">do you want
+						to make it live?</label>
+				</div>
 			</fieldset>
 			<%
 				if (request.getParameter("fromCart") != null) {
