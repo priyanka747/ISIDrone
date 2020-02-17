@@ -21,9 +21,10 @@ public class PropertyValues {
 			String propFileName = "config.properties";
  
 			inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
- 
+			
 			if (inputStream != null) {
 				prop.load(inputStream);
+				System.out.println(inputStream.getClass());
 			} else {
 				throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
 			}

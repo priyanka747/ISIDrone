@@ -104,22 +104,22 @@ public class MItem {
 
 	public static boolean removeItemById(int id) {
 
-		try {
-			MDB.connect();
-			String query = "delete from product where id=?";
-
-			PreparedStatement ps = MDB.getPS(query);
-			ps.setInt(1, id);
-			int rs = ps.executeUpdate();
-			System.out.println(rs);
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			MDB.disconnect();
-		}
-
-		return true;
+			try {
+				MDB.connect();
+				String query = "delete from product where id=?";
+	
+				PreparedStatement ps = MDB.getPS(query);
+				ps.setInt(1, id);
+				int rs = ps.executeUpdate();
+//				System.out.println(rs);
+	
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				MDB.disconnect();
+			}
+	
+			return true;
 	}
 
 	public static int addItem(Item item) {

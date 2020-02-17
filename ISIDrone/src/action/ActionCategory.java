@@ -4,10 +4,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import manager.MCategory;
+import manager.MItem;
 
 public class ActionCategory {
 	
 	public static void getCategories(HttpServletRequest request, HttpServletResponse response) {
+		
 		request.setAttribute("categories", MCategory.getCategories(true));
 	}
 	public static void getActiveCategories(HttpServletRequest request, HttpServletResponse response) {
@@ -36,5 +38,14 @@ public class ActionCategory {
 			categorySelected = 0;
 		
 		return categorySelected;
+	}
+	public static void getCategoryById( HttpServletRequest request, HttpServletResponse response) {
+		int id=Integer.parseInt(request.getParameter("category_id"));
+		
+	}
+	public static void removeCategory(HttpServletRequest request, HttpServletResponse response) {
+		int id= Integer.parseInt(request.getParameter("category_id"));
+		MCategory.removeItemById(id);
+		
 	}
 }

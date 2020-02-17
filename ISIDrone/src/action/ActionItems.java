@@ -33,26 +33,32 @@ public class ActionItems {
 		String[] s_formParamsNeeded = { "Name", "category", "desc", "price", "serial", "stock", "isactive" },
 				s_formParamsOptional = { "id" };
 		String[] s_formValuesNeeded = { request.getParameter(s_formParamsNeeded[0]),
-				request.getParameter(s_formParamsNeeded[1]), request.getParameter(s_formParamsNeeded[2]),
-				request.getParameter(s_formParamsNeeded[3]), request.getParameter(s_formParamsNeeded[4]),
-				request.getParameter(s_formParamsNeeded[5]), request.getParameter(s_formParamsNeeded[6]) };
+				request.getParameter(s_formParamsNeeded[1]),
+				request.getParameter(s_formParamsNeeded[2]),
+				request.getParameter(s_formParamsNeeded[3]),
+				request.getParameter(s_formParamsNeeded[4]),
+				request.getParameter(s_formParamsNeeded[5]),
+				request.getParameter(s_formParamsNeeded[6]) };
 
 		String[] s_formValueOptional = { request.getParameter(s_formParamsOptional[0]) };
 
-		boolean isCompleted = true;
+		boolean isCompleted = false;
 
 		// HashMap des données obligatoire
 		HashMap<String, String> hm_formParamValue = new HashMap<String, String>();
 		for (int i = 0; i < s_formValuesNeeded.length; i++) {
 			hm_formParamValue.put(s_formParamsNeeded[i], s_formValuesNeeded[i]);
 		}
-
+		for (int i = 0; i < s_formValuesNeeded.length; i++) {
+			
+			System.out.println(s_formParamsNeeded[i]+" "+s_formValuesNeeded[i]);
+		}
 		// HasMap des données Optionnel
 		for (int i = 0; i < s_formValueOptional.length; i++) {
 			hm_formParamValue.put(s_formParamsOptional[i], s_formValueOptional[i]);
 		}
 
-		isCompleted = validateForm(hm_formParamValue, request);
+//		isCompleted = validateForm(hm_formParamValue, request);
 
 		if (isCompleted) {
 			
@@ -65,8 +71,9 @@ public class ActionItems {
 			item.setSerial(hm_formParamValue.get("serial"));
 			item.setImage("#");
 			item.setActive(true);//hm_formParamValue.get("isactive"));
+			
 			int rep = MItem.addItem(item);
-
+			System.out.println(rep);
 			if (rep < 1) {
 				isCompleted = false;
 				if (rep == 0)
@@ -101,25 +108,18 @@ public class ActionItems {
 		Restriction restrictConfirmPassword = new Restriction(hm_formParamValue.get("password"));
 
 		Restriction restrictAddr_no = new Restriction(1, 10, Pattern.compile("[a-zA-z0-9]*"));
-		Restriction restrictionAddr_app = new Restriction(true, 1, 10, Pattern.compile("[a-zA-z0-9]*"));
+		Restriction restrictionAddr_app = new Restriction( 1, 10, Pattern.compile("[a-zA-z0-9]*"));
 		Restriction restrictionAddr_street = new Restriction(1, 45);
 		Restriction restrictAddr_zip = new Restriction();
 
 		// Création d'un objet Validation et ajout des restrictions à ce dernier
 		Validation validation = new Validation(hm_formParamValue);
-		validation.addRestriction("lastName", restrict1);
-		validation.addRestriction("firstName", restrict1);
-		validation.addRestriction("email", restrictEmail);
-		validation.addRestriction("confirmEmail", restrictConfirmEmail);
-		validation.addRestriction("password", restrictPassword);
-		validation.addRestriction("confirmPassword", restrictConfirmPassword);
-		validation.addRestriction("addr_no", restrictAddr_no);
-		validation.addRestriction("addr_appt", restrictionAddr_app);
-		validation.addRestriction("addr_street", restrictionAddr_street);
-		validation.addRestriction("addr_zip", restrictAddr_zip);
-		validation.addRestriction("addr_city", restrict1);
-		validation.addRestriction("addr_state", restrict1);
-		validation.addRestriction("addr_country", restrict1);
+		validation.addRestriction("Name", restrict1);
+		validation.addRestriction("category", restrictAddr_no);
+		validation.addRestriction("desc", restrictionAddr_app);
+		validation.addRestriction("price", restrictAddr_no);
+		validation.addRestriction("serial", restrictionAddr_app);
+		validation.addRestriction("stock", restrictAddr_no);
 
 		// On conserve les résultat des tests
 		ArrayList<ResultValidation> resultValidations = validation.validate();
@@ -127,9 +127,10 @@ public class ActionItems {
 		for (ResultValidation rv : resultValidations) {
 			// Si le test ne passe pas, alors on ajoute un message d'erreur
 			if (rv.getCode() != 0)
+				System.out.println(getErrorMsg(rv));
 				hm_fieldErrorMsg.put(rv.getKey(), getErrorMsg(rv));
 		}
-
+																		
 		// On passe le hashMap en attribut à la requête
 		request.setAttribute("hm_fieldErrorMsg", hm_fieldErrorMsg);
 

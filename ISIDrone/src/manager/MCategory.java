@@ -34,7 +34,28 @@ public class MCategory {
 		
 		return categories;
 	}
-	
+	public static ArrayList<Category> getCategoryById(int id){
+		ArrayList<Category> categories = new ArrayList<Category>();
+		String query ;
+		try {
+			MDB.connect();
+			
+				query =  "SELECT * FROM category where id=?";
+			
+			ResultSet rs = MDB.execQuery(query);
+			while(rs.next()) {
+				categories.add(new Category(rs.getInt(1),rs.getInt(4), rs.getString(2), rs.getString(3)));	
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			MDB.disconnect();	
+		}
+		
+		return categories;
+	}
 	public static int isExist(int category) {
 		int isExist = -1;		
 		try {
@@ -55,5 +76,24 @@ public class MCategory {
 		}
 		
 		return isExist;
+	}
+	public static boolean removeItemById(int id) {
+		
+		try {
+			MDB.connect();
+			String query = "delete from category where id=?";
+
+			PreparedStatement ps = MDB.getPS(query);
+			ps.setInt(1, id);
+			int rs = ps.executeUpdate();
+			System.out.println(rs);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			MDB.disconnect();
+		}
+
+		return true;
 	}
 }

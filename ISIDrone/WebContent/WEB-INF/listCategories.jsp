@@ -17,7 +17,7 @@ ArrayList<Category> categories = (ArrayList<Category>) request.getAttribute("cat
    <div class="container">
 	 <div class="row">
          <div class="col-md-12">
-         <a type="button" class="btn btn-primary" href="add-category">Add Category</a>
+         <a type="button" class="btn btn-primary" href="add-category?a=3">Add Category</a>
          </div>
          </div>
         <div class="row">
@@ -43,8 +43,8 @@ if(categories.size() > 0) {
 		<td><%=category.getOrderOfAppearance()%></td>
 		<td>
 		
-		<a class="btn btn-primary" href="add-product?a=1&product_id=<%= category.getId() %>" role="button" >Modify</a>
-		<a class="btn btn-outline-danger" href="add-product?a=2&product_id=<%= category.getId() %>" onclick="return confirm('Are you sure you want to delete this item?');" role="button">Remove</a>
+		<a class="btn btn-primary" href="add-category?a=1&category_id=<%= category.getId() %>" role="button" >Modify</a>
+		<a class="btn btn-outline-danger" href="add-category?a=2&category_id=<%= category.getId() %>" onclick="return confirm('Are you sure you want to delete this category?');" role="button">Remove</a>
 		
 		</td>
 		</tr>

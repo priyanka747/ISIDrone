@@ -57,7 +57,7 @@
 		}
 	%>
 
-	<form action="AddProduct>" method="post"
+	<form action="add-product" method="post"
 		class="panel panel-primary form-horizontal"
 		style="float: unset; margin: auto;">
 		<div class="panel-heading">
@@ -65,13 +65,13 @@
 		</div>
 		<div class="panel-body">
 			<fieldset class="col-sm-6 col-lg-6 col-md-6">
-			
+
 				<legend>New Product Information</legend>
-				<input type="hidden" id="id" value=<%= item!=null?item.getName():"" %>
-							class="form-control" name="id"
-							}
-							value="<%=Misc.getOrDefault(hm_formParamValue, "Name", "")%>"
-							/>
+				<input type="hidden" id="id"
+					value=<%= item!=null?item.getName():"" %> class="form-control"
+					name="id"
+					}
+							value="<%=Misc.getOrDefault(hm_formParamValue, "Name", "")%>" />
 				<%
 					if (hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("lastName")) {
 				%>
@@ -83,7 +83,7 @@
 				<div class="form-group">
 					<div class="col-sm-10">
 						<label for="Name" class="col-sm-2 control-label">Name</label> <input
-							type="text" id="Name" value="<%= item!=null?item.getName():"" %>" 
+							type="text" id="Name" value="<%= item!=null?item.getName():"" %>"
 							class="form-control" name="Name"
 							}
 							value="<%=Misc.getOrDefault(hm_formParamValue, "Name", "")%>"
@@ -148,7 +148,7 @@
 					<div class="col-sm-10">
 						<label for="price" class="col-sm-2 control-label"
 							style="padding-top: 0px;">price </label> <input type="number"
-							id="price" class="form-control" name="price"
+							step="0.01" id="price" class="form-control" name="price"
 							placeholder="" value="<%=item != null ? item.getPrice() : ""%>"
 							required />
 					</div>
@@ -165,9 +165,9 @@
 					<div class="col-sm-10">
 						<label for="serial" class="col-sm-2 control-label"
 							style="padding-top: 0px;">serial number </label> <input
-							type="text" id="serial" class="form-control"
-							name="serial" placeholder=""
-							value="<%=item != null ? item.getSerial() : ""%>" required />
+							type="text" id="serial" class="form-control" name="serial"
+							placeholder="" value="<%=item != null ? item.getSerial() : ""%>"
+							required />
 					</div>
 				</div>
 
@@ -186,7 +186,7 @@
 					<div class="col-sm-10">
 						<label for="stock" class="col-sm-2 control-label"
 							style="padding-top: 0px;">Stock </label> <input type="number"
-							id="stock" class="form-control" name="stock"
+							id="stock" class="form-control" name="stock" step="1"
 							value="<%=item != null ? item.getStock() : ""%>" required />
 					</div>
 				</div>
@@ -200,9 +200,9 @@
 				%>
 				<div class="form-group login-group-checkbox">
 					<input id="isactive" name="isactive" type="checkbox"
-						<%=item != null ? (item.isActive() ? "checked" : "") : " "%> id="isactive"
-						name="isactive"> <label for="isactive">do you want
-						to make it live?</label>
+						<%=item != null ? (item.isActive() ? "checked" : "") : " "%>
+						id="isactive" name="isactive"> <label for="isactive">do
+						you want to make it live?</label>
 				</div>
 			</fieldset>
 			<%

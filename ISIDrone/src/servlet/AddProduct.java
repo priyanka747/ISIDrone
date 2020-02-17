@@ -55,7 +55,12 @@ public class AddProduct extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+			if(ActionItems.addItem(request, response)) {
+				request.getRequestDispatcher(Const.PATH_PAGE_PRODUCT_ADD_COMPLETE).forward(request, response);
+			}
+			else {
+				request.getRequestDispatcher("add-product?a=3");
+			}
 	}
 
 }

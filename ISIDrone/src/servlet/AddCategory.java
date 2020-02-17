@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import action.ActionCategory;
+import action.ActionItems;
 import util.Const;
 
 /**
@@ -27,7 +29,21 @@ public class AddCategory extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher(Const.PATH_PAGE_ADD_CATEGORY).forward(request, response);
+		int action = Integer.parseInt(request.getParameter("a"));
+		if (action == 1) {
+			ActionCategory.getCategoryById(request, response);
+			ActionCategory.getCategories(request, response);
+			request.getRequestDispatcher(Const.PATH_PAGE_ADD_CATEGORY).forward(request, response);
+		} else if (action == 2) {
+			ActionCategory.removeCategory( request, response);
+			ActionCategory.getCategories(request, response);
+			response.sendRedirect("ListCategories");
+//			
+		} else {
+			
+			request.getRequestDispatcher(Const.PATH_PAGE_ADD_CATEGORY).forward(request, response);
+		}
+//		request.getRequestDispatcher(Const.PATH_PAGE_ADD_CATEGORY).forward(request, response);
 	}
 
 	/**
