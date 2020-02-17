@@ -25,30 +25,30 @@
 			<fieldset class="col-sm-6 col-lg-6 col-md-6">
 			  <div class="panel">
 			  	<legend>Information Utilisateur</legend>
-			    <p>Nom: <%=user.getLastName()%></p>
-			    <p>Prenom: <%=user.getFirstName()%></p>
+			    <p>Last Name: <%=user.getLastName()%></p>
+			    <p>First Name: <%=user.getFirstName()%></p>
 			    <p>Email: <%=user.getEmail()%></p>
 			  </div>
 			</fieldset>
 			<fieldset class="col-sm-6 col-lg-6 col-md-6">
-			  	<legend>Adresse de livraison</legend>
-			    <p>Numéro civique: <%=address.getNo()%></p>
+			  	<legend>Delivery Adresse</legend>
+			    <p>Civic Number: <%=address.getNo()%></p>
 			    <%=((address.getAppt() == null)? "<p>Appartement: " + address.getAppt() + "</p>" : "")%>
-			    <p>Rue: <%=address.getStreet()%></p>
-			    <p>Code Postal: <%=address.getZip()%></p>
-			    <p>Ville: <%=address.getCity()%></p>
-			    <p>Province: <%=address.getState()%></p>
-			    <p>Pays: <%=address.getCountry()%></p>
+			    <p>Street: <%=address.getStreet()%></p>
+			    <p> Postal Code: <%=address.getZip()%></p>
+			    <p>City: <%=address.getCity()%></p>
+			    <p>State: <%=address.getState()%></p>
+			    <p>Country: <%=address.getCountry()%></p>
 			</fieldset>
 		</div>
 	</div>
 	<form action="cartuser" method="post" style="float:left;margin-right:10px;">
 	<button type="submit" name="toInvoice" class="btn btn-success">
-		Confirmer <span class="glyphicon glyphicon-play"></span>
+		Confirm <span class="glyphicon glyphicon-play"></span>
 	</button>
 	</form>
 	<button type="submit" name="modify" class="btn btn-default">
-		Modifier
+		Modify
 	</button>
 </div>
 <!-- Footer -->

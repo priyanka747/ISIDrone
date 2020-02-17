@@ -40,7 +40,6 @@ public enum PageType {
 	// Recuperer l'utilisateur
 	User user = (User)session.getAttribute("user");
 	Address address = user.getShipAddress();
-	
 	Order order = null;
 	// si une commande est presente dans la session et que le parametre get est present afficher l'hitorique
 	if(pageType == PageType.ORDER){
@@ -60,13 +59,13 @@ public enum PageType {
 	%>
 			<div class="alert alert-dismissible alert-success">
 			  	<button type="button" class="close" data-dismiss="alert">×</button>
-			 	 Votre commande à été transmise.
+			 	 Your order has been transmitted.
 			</div>
 			<div class="progress-cart">
-				<span class="label label-success">Panier</span>
-				<span class="label label-success">Sommaire</span>
-				<span class="label label-success">Compte</span>
-				<span class="label label-success">Facture</span>
+				<span class="label label-success">Cart</span>
+				<span class="label label-success">Summary</span>
+				<span class="label label-success">Complete</span>
+				<span class="label label-success">Invoice</span>
 			</div>	
 	<%
 		}
@@ -78,11 +77,11 @@ public enum PageType {
 	    		<%
 	    			if(pageType == PageType.ORDER){
 	 			%>
-	    			<h2>Facture</h2><h3 class="pull-right">Commande # <%=order.getId()%></h3>		
+	    			<h2>Bill</h2><h3 class="pull-right">Order # <%=order.getId()%></h3>		
 	    		<%
 	    			}else{
 	    		%>
-	    			<h2>Facture</h2><h3 class="pull-right">Commande # <%=(Integer)request.getAttribute("orderId")%></h3>	
+	    			<h2>Bill</h2><h3 class="pull-right">Order # <%=(Integer)request.getAttribute("orderId")%></h3>	
 	    		<%
 	    			}
 	    		%>
@@ -92,7 +91,7 @@ public enum PageType {
     		<div class="row">
     			<div class="col-xs-6">
     				<address>
-    				<strong>Facturé à:</strong><br>
+    				<strong>Billed to:</strong><br>
     					<%=user.getFirstName()%> <%=user.getLastName()%><br>
     					<%=address.getNo()%> <%=address.getStreet()%><br>
     					<%=((address.getAppt() == null)? "Apt. " + address.getAppt() + "<br>" : "")%>
@@ -102,24 +101,39 @@ public enum PageType {
     			</div>
     			<div class="col-xs-6 text-right">
     				<address>
-        			<strong>Envoyé à:</strong><br>
+        			<strong>Sent to:</strong><br>
     					<%=user.getFirstName()%> <%=user.getLastName()%><br>
     					<%=address.getNo()%> <%=address.getStreet()%><br>
     					<%=((address.getAppt() == null)? "Apt. " + address.getAppt() + "<br>" : "")%>
     					<%=address.getCity()%>, <%=address.getState() %> <%=address.getZip()%><br>
     					<%=address.getCountry()%>
-    				</address>
+    				</address	>
     			</div>
     		</div>
     		<div class="row">
     			<div class="col-xs-6">
     				<address>
-    					<strong>Methode de paiment:</strong><br>
+    					<strong>Payment Method:</strong><br>
     					Visa **** 4242<br>
     					<%=user.getEmail()%>
     				</address>
     			</div>
     			<div class="col-xs-6 text-right">
+    			<aside>
+    			 <strong>Shipment Status:</strong><br>
+    			 <%
+	    			if(pageType == PageType.ORDER){
+	 			%>
+	    			<%=(order.isShipped()?"Shipped":"Not Shipped")%><br><br>	
+	    		<%
+	    			}else{
+	    		%>
+	    			Not Shipped
+	    		<%
+	    			}
+	    		%>
+    			
+    			</aside>
     				<address>
     					<strong>Date:</strong><br>
     					<%=Misc.getCurrDate()%><br><br>
@@ -133,7 +147,7 @@ public enum PageType {
     	<div class="col-md-12">
     		<div class="panel panel-default">
     			<div class="panel-heading">    				
-    				<h3 class="panel-title"><strong>Sommaire</strong></h3>    				
+    				<h3 class="panel-title"><strong>Summary</strong></h3>    				
     			</div>
     			<div class="panel-body">
     				<div class="table-responsive">
@@ -141,9 +155,9 @@ public enum PageType {
     						<thead>
                                 <tr>
         							<td><strong>Item</strong></td>
-        							<td class="text-center"><strong>Prix</strong></td>
-        							<td class="text-center"><strong>Quantité</strong></td>
-        							<td class="text-right"><strong>Totaux</strong></td>
+        							<td class="text-center"><strong>price</strong></td>
+        							<td class="text-center"><strong>Quantity</strong></td>
+        							<td class="text-right"><strong>Total</strong></td>
                                 </tr>
     						</thead>
     						<tbody>
@@ -162,13 +176,13 @@ public enum PageType {
     							<tr>
     								<td class="thick-line"></td>
     								<td class="thick-line"></td>
-    								<td class="thick-line text-center"><strong>Sous-Total</strong></td>
+    								<td class="thick-line text-center"><strong>Sub-Total</strong></td>
     								<td class="thick-line text-right"><%=df.format(cart.generateSubTotal())%>$</td>
     							</tr>
     							<tr>
     								<td class="no-line"></td>
     								<td class="no-line"></td>
-    								<td class="no-line text-center"><strong>Livraison</strong></td>
+    								<td class="no-line text-center"><strong>Delivery</strong></td>
     								<td class="no-line text-right"><%=df.format(cart.generateShipCost())%>$</td>
     							</tr>
     							<tr>
@@ -186,7 +200,7 @@ public enum PageType {
     </div>
     </div>
     <button id="print-invoice" class="btn btn-default">
-		Imprimer
+		Print
 	</button>
 </div>
 <!-- Footer -->

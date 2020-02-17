@@ -28,7 +28,7 @@ public class MOrder {
 
 			// Partie 1
 			// Creer une commande et récupere le ID
-			String query = "INSERT INTO `order` (`user_id`, `date`) VALUES (?, now())";
+			String query = "INSERT INTO `orders` (`user_id`, `date`, `isShipped`) VALUES (?, now(),false)";
 			
 			PreparedStatement ps = MDB.getPS(query, 1);
 
@@ -78,10 +78,10 @@ public class MOrder {
 			
 			MDB.connect();
 
-			String query = "SELECT `order`.id, `order`.date,"
+			String query = "SELECT `orders`.id, `orders`.date,`orders`.isShipped,"
 					+ " `order_info`.order_id, `order_info`.product_id, `order_info`.qty, `order_info`.price "
-					+ "FROM `order` INNER JOIN `order_info` ON `order`.id = `order_info`.order_id WHERE `order`.user_id = ?;";
-			
+					+ "FROM `orders`  INNER JOIN `order_info` ON `orders`.id = `order_info`.order_id WHERE `orders`.user_id = ?;";
+			System.out.println(query);
 			PreparedStatement ps = MDB.getPS(query);
 
 			ps.setInt(1, userId);
@@ -105,8 +105,8 @@ public class MOrder {
 					
 					order.setId(orderId);
 					order.setUserId(userId);
-					order.setDate(rs.getString("order.date"));
-					
+					order.setDate(rs.getString("orders.date"));
+					order.setShipped(rs.getBoolean("orders.isShipped"));
 					// Ajouter la commande a la liste	
 					orderList.add(order);
 				}

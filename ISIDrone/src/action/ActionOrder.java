@@ -33,7 +33,7 @@ public class ActionOrder {
 		String sujet = "Payment Complete";
 		String message = "congratulations, Your order Placed Successfully";
 		
-		MSendMail.sendEmail(message, to, sujet);
+//		MSendMail.sendEmail(message, to, sujet);
 		
 	}
 	
@@ -45,5 +45,5 @@ public class ActionOrder {
 
 	public static void getOrders(HttpServletRequest request, HttpServletResponse response) {
 		request.setAttribute("orders",MOrder.getOrders(request,response));
-	}
+	}																										
 }

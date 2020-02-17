@@ -27,7 +27,7 @@ if(user != null) {%>
 		<li><a href="ListCategories">View Categories</a></li>
 		<li><a href="ListOrders">View Orders</a></li>
 		<%}else{ %>
-		<li><a href="ListCategories">Order History</a></li>
+		<li><a href="order-history">Order History</a></li>
 		
 		<% }%>
 		<li><a href="login">Logout</a></li>

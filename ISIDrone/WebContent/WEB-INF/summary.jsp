@@ -26,7 +26,7 @@
     	<div class="col-md-12">
     		<div class="panel panel-default">
     			<div class="panel-heading">
-    				<h3 class="panel-title"><strong>Sommaire</strong></h3>
+    				<h3 class="panel-title"><strong>Summary</strong></h3>
     			</div>
     			<div class="panel-body">
     				<div class="table-responsive">
@@ -79,7 +79,7 @@
     </div>
 	<form action="summary" method="post">
 	<button type="submit" name="fromCart" class="btn btn-success">
-		Continuer <span class="glyphicon glyphicon-play"></span>
+		Continue <span class="glyphicon glyphicon-play"></span>
 	</button>
 	</form>
 </div>

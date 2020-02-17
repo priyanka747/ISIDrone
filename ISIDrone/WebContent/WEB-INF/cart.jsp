@@ -22,7 +22,7 @@
 
 <div class="container">
 	<div class="progress-cart">
-		<span class="label label-success">Basket</span>
+		<span class="label label-success">Cart</span>
 		<span class="label label-warning">Summary</span>
 		<span class="label label-warning">Account</span>
 		<span class="label label-warning">Invoice</span>
@@ -122,7 +122,8 @@
    	%>
     	<div class="panel panel-default">
 			<div class="panel-body">
-				Le panier est vide
+				The cart is empty.
+				
 			</div>
 		</div>
    	<%

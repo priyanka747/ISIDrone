@@ -34,6 +34,7 @@
         							<td><strong>ID</strong></td>
         							<td class="text-center"><strong>Date</strong></td>
         							<td class="text-center"><strong>Number of item</strong></td>
+        							<td class="text-center"><strong>Shipment Status</strong></td>
         							<td class="text-right"><strong>Total</strong></td>
                                 </tr>
     						</thead>
@@ -62,6 +63,7 @@
 	    		 	               			out.println(size);
 	    								%>
 	    								</td>
+	    								<td class="text-center"><%=(order.isShipped()?"shipped":"In Process")%></td>
 	    								<td class="text-right"><%=df.format(order.generateTotal())%>$</td>
 	    							</tr>
     							
