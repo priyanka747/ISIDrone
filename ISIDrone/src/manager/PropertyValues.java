@@ -1,5 +1,6 @@
 package manager;
  
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,11 +21,11 @@ public class PropertyValues {
 			Properties prop = new Properties();
 			String propFileName = "config.properties";
  
-			inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
+			inputStream = new FileInputStream("/opt/tomcat/latest/webapps/conf/config.properties");
 			
 			if (inputStream != null) {
 				prop.load(inputStream);
-				System.out.println(inputStream.getClass());
+				System.out.println(inputStream);
 			} else {
 				throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
 			}
