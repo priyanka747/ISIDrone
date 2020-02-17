@@ -29,7 +29,7 @@ public class MLogin {
 			ps = MDB.getPS(query);
 			ps.setString(1, id);
 			ps.setString(2, Hash.SHA1(password));
-			System.out.println(query);
+//			System.out.println(query);
 			ps.executeQuery();
 			
 			ResultSet rs = ps.getResultSet();
