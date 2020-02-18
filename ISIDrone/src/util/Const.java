@@ -1,5 +1,9 @@
 package util;
 
+import javax.naming.InitialContext;
+
+import org.omg.CORBA.Environment;
+
 public class Const {
 	
 	public static String COMP_NAME = "Isi Drone";
@@ -20,7 +24,7 @@ public class Const {
 	
 	// Global
 	public static String PATH_IMG = "images/";
-	public static String PATH_IMG_PRODUCT = "images/products/";
+	public static String PATH_IMG_PRODUCT ="images/products/";
 	
 	public static String PATH_HEAD_JSP = PATH_GLOBAL_INCLUDES + "head.jsp";			// <head>
 	public static String PATH_FOOTER_JSP = PATH_GLOBAL_INCLUDES + "footer.jsp";		// Footer
