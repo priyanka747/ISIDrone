@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +21,10 @@ public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		Map <String, String> map = System.getenv();
+        for (Map.Entry <String, String> entry: map.entrySet()) {
+            System.out.println("Variable Name:- " + entry.getKey() + " Value:- " + entry.getValue());
+        }
 		//Récupération des catégories
 		ActionCategory.getActiveCategories(request, response);
 		//Récupération des produits en vedettes
@@ -32,6 +36,7 @@ public class Home extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		String strId = request.getParameter("itemId");
 		String strQty = request.getParameter("qty");
 	 

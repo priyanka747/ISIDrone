@@ -61,7 +61,7 @@
 		class="panel panel-primary form-horizontal"
 		style="float: unset; margin: auto;">
 		<div class="panel-heading">
-			<h3 class="panel-title">Add New Product to site</h3>
+			<h3 class="panel-title">Add new product to site</h3>
 		</div>
 		<div class="panel-body">
 			<fieldset class="col-sm-6 col-lg-6 col-md-6">
@@ -147,7 +147,7 @@
 				<div class="form-group">
 					<div class="col-sm-10">
 						<label for="price" class="col-sm-2 control-label"
-							style="padding-top: 0px;">price </label> <input type="number"
+							style="padding-top: 0px;">Price </label> <input type="number"
 							step="0.01" id="price" class="form-control" name="price"
 							placeholder="" value="<%=item != null ? item.getPrice() : ""%>"
 							required />
@@ -164,7 +164,7 @@
 				<div class="form-group">
 					<div class="col-sm-10">
 						<label for="serial" class="col-sm-2 control-label"
-							style="padding-top: 0px;">serial number </label> <input
+							style="padding-top: 0px;">Serial Number </label> <input
 							type="text" id="serial" class="form-control" name="serial"
 							placeholder="" value="<%=item != null ? item.getSerial() : ""%>"
 							required />
@@ -201,7 +201,7 @@
 				<div class="form-group login-group-checkbox">
 					<input id="isactive" name="isactive" type="checkbox"
 						<%=item != null ? (item.isActive() ? "checked" : "") : " "%>
-						id="isactive" name="isactive"> <label for="isactive">do
+						id="isactive" name="isactive"> <label for="isactive">Do
 						you want to make it live?</label>
 				</div>
 			</fieldset>

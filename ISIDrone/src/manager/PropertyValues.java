@@ -33,10 +33,10 @@ public class PropertyValues {
 			String propFileName = "config.properties";
 
 			if (isProduction()) {
-				System.out.print("p");
+//				System.out.print("p");
 			inputStream = new FileInputStream("/opt/tomcat/latest/webapps/conf/config.properties");
 			} else {
-				System.out.print("d");
+//				System.out.print("d");
 				inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
 			}
 

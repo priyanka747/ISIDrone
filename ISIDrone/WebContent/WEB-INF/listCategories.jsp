@@ -28,6 +28,7 @@ ArrayList<Category> categories = (ArrayList<Category>) request.getAttribute("cat
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Order Of Appearance</th>
+      <th scope="col">Category is active?</th>
       <th scope="col">Action</th>
       
     </tr>
@@ -41,6 +42,8 @@ if(categories.size() > 0) {
 		 <tr>
 		<td><%=category.getName()%></td>
 		<td><%=category.getOrderOfAppearance()%></td>
+		<td><%=category.isActive()?"Active":"Inactive" %></td>
+		
 		<td>
 		
 		<a class="btn btn-primary" href="add-category?a=1&category_id=<%= category.getId() %>" role="button" >Modify</a>

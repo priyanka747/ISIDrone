@@ -31,7 +31,7 @@
                     <h2>ISI Drone</h2>
                     <address>
 				2100 Boulevard Maisonneuve Est<br>
-				1er étage<br>
+				1<sup>st</sup>floor<br>
 				Montréal (Québec)<br>
 				H2K 4S1<br>
 				Email:info@isi-mtl.com<br>

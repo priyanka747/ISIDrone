@@ -124,7 +124,7 @@ public class MLogin {
 			MDB.connect();
 			String query = "SELECT user.id, user.lastName, user.firstName, user.email, user.password,user.role,"
 					+ "address.id, address.no, address.appt, address.street, address.zip, address.city, address.state, address.country"
-					+ " FROM user inner join address on user.ship_address_id = address.id where user.id= ? ";
+					+ " FROM users user inner join address on user.ship_address_id = address.id where user.id= ? ";
 			PreparedStatement ps = MDB.getPS(query);
 			ps.setInt(1, id);
 			

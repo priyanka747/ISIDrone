@@ -22,7 +22,7 @@ public class MCategory {
 			}
 			ResultSet rs = MDB.execQuery(query);
 			while(rs.next()) {
-				categories.add(new Category(rs.getInt(1),rs.getInt(4), rs.getString(2), rs.getString(3)));	
+				categories.add(new Category(rs.getInt(1),rs.getInt(4),rs.getBoolean(5), rs.getString(2), rs.getString(3)));	
 			}
 			
 		} catch (SQLException e) {
@@ -44,7 +44,7 @@ public class MCategory {
 			
 			ResultSet rs = MDB.execQuery(query);
 			while(rs.next()) {
-				categories.add(new Category(rs.getInt(1),rs.getInt(4), rs.getString(2), rs.getString(3)));	
+				categories.add(new Category(rs.getInt(1),rs.getInt(4),rs.getBoolean(5), rs.getString(2), rs.getString(3)));	
 			}
 			
 		} catch (SQLException e) {

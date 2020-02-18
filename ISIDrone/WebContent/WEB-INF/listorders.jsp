@@ -42,8 +42,8 @@ DecimalFormat df = new DecimalFormat("####0.00");
 		<tr>
 		<td><%=order.getDate()%></td>
 		<td><%=order.getUser().getFirstName()+" "+order.getUser().getLastName()%></td>
-		<td><%=order.isShipped()%></td>
-		
+		<td><%=order.isShipped()?"Shipped":"Not Shipped"%></td>
+		<td>
 		<a class="btn btn-primary" href="modify-order?order_id=<%= order.getId() %>" role="button" >Modify</a>
 		<a class="btn btn-outline-danger" href="" onclick="myFunction()" role="button">Remove</a>
 		</td>

@@ -12,14 +12,14 @@
 <jsp:include page="<%=Const.PATH_MENU_JSP%>"/>
 <div class="container">
 	<div class="progress-cart">
-		<span class="label label-success">Panier</span>
-		<span class="label label-success">Sommaire</span>
-		<span class="label label-success">Compte</span>
-		<span class="label label-warning">Facture</span>
+		<span class="label label-success">Cart</span>
+		<span class="label label-success">Summary</span>
+		<span class="label label-success">Complete</span>
+		<span class="label label-warning">Invoice</span>
 	</div>
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-	    	<h3 class="panel-title">Compte</h3>
+	    	<h3 class="panel-title">Complete</h3>
 	  	</div>
 	  	<div class="panel-body">
 			<fieldset class="col-sm-6 col-lg-6 col-md-6">
@@ -31,7 +31,7 @@
 			  </div>
 			</fieldset>
 			<fieldset class="col-sm-6 col-lg-6 col-md-6">
-			  	<legend>Delivery Adresse</legend>
+			  	<legend>Delivery Address</legend>
 			    <p>Civic Number: <%=address.getNo()%></p>
 			    <%=((address.getAppt() == null)? "<p>Appartement: " + address.getAppt() + "</p>" : "")%>
 			    <p>Street: <%=address.getStreet()%></p>

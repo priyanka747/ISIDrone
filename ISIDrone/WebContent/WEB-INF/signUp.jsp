@@ -101,7 +101,7 @@ if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("confirmEmail")) {
 %>
 					<div class="form-group">	
 						<div class="col-sm-10">
-							<label for="confirmEmail" class="col-sm-2 control-label" style="padding-top: 0px;">(Confirmation)<br />*Email</label>
+							<label for="confirmEmail" class="col-sm-2 control-label" style="padding-top: 0px;">*ConfirmationEmail</label>
 							<input type="email" id="confirmEmail" class="form-control" name="confirmEmail" placeholder="Email" value="<%=Misc.getOrDefault(hm_formParamValue, "confirmEmail", "")%>" required />
 						</div>
 					</div>
@@ -127,13 +127,13 @@ if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("confirmPassword")) 
 %>
 					<div class="form-group">
 						<div class="col-sm-10">
-							<label for="confirmPassword" class="col-sm-2 control-label" style="padding-top: 0px;">*(Confirm) Password</label>
+							<label for="confirmPassword" class="col-sm-2 control-label" style="padding-top: 0px;">*Confirm Password</label>
 							<input type="password" id="confirmPassword" class="form-control" name="confirmPassword" required />
 						</div>
 					</div>
 				</fieldset>
 				<fieldset class="col-sm-6 col-lg-6 col-md-6">
-					<legend>Adresse de livraison</legend>
+					<legend>Delivery Address </legend>
 <%
 if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("addr_no")) {
 %>
@@ -169,7 +169,7 @@ if(hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("addr_street")) {
 %>
 					<div class="form-group">
 						<div class="col-sm-10">
-							<label for="lastName" class="col-sm-2 control-label">*street</label>
+							<label for="lastName" class="col-sm-2 control-label">*Street</label>
 							<input type="text" id="addr_street" class="form-control" name="addr_street" value="<%=Misc.getOrDefault(hm_formParamValue, "addr_street", "")%>" required />
 						</div>
 					</div>

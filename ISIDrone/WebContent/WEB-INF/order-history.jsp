@@ -33,8 +33,8 @@
                                 <tr>
         							<td><strong>ID</strong></td>
         							<td class="text-center"><strong>Date</strong></td>
-        							<td class="text-center"><strong>Number of item</strong></td>
         							<td class="text-center"><strong>Shipment Status</strong></td>
+        							<td class="text-center"><strong>Number of item</strong></td>
         							<td class="text-right"><strong>Total</strong></td>
                                 </tr>
     						</thead>
@@ -54,6 +54,7 @@
 	    							<tr>
 	    								<td style=":hover"><%="<a href='order?no=" + i + "'>" + order.getId() + "</a>"%></td>
 	    								<td class="text-center"><%=order.getDate()%></td>
+	    								<td class="text-center"><%=(order.isShipped()?"shipped":"Not Shipped")%></td>
 	    								<td class="text-center">
 	    								<%
 	    									int size = 0;
@@ -63,7 +64,6 @@
 	    		 	               			out.println(size);
 	    								%>
 	    								</td>
-	    								<td class="text-center"><%=(order.isShipped()?"shipped":"In Process")%></td>
 	    								<td class="text-right"><%=df.format(order.generateTotal())%>$</td>
 	    							</tr>
     							
