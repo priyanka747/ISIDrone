@@ -14,6 +14,7 @@
 	HashMap<String, String> hm_fieldErrorMsg = (HashMap<String, String>) request
 			.getAttribute("hm_fieldErrorMsg");
 	String error = (String) request.getAttribute("error");
+	int action=Integer.parseInt(request.getParameter("a"));
 %>
 <!-- Page Content -->
 <div class="container">
@@ -104,7 +105,7 @@
 			%>
 			<div class="form-group text-center "
 				style="clear: left; top: 15px; margin-bottom: 15px;">
-				<button type="submit" class="btn btn-default">Add..</button>
+				<button type="submit" class="btn btn-default"><%=action==1?"Modify":"Add" %></button>
 			</div>
 		</div>
 	</form>
