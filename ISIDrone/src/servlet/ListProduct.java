@@ -36,7 +36,7 @@ public class ListProduct extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = MSession.getSession(request);
 		User user = (User) session.getAttribute("user");
-		System.out.println(user.getRole());
+//		System.out.println(user.getRole());
 		if (user.getRole().equalsIgnoreCase("admin")) {
 			// PATH_PAGE_LIST_PRODUCT
 						ActionItems.getItems(request, response);

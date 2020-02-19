@@ -14,7 +14,7 @@
 	<div class="progress-cart">
 		<span class="label label-success">Cart</span>
 		<span class="label label-success">Summary</span>
-		<span class="label label-success">Complete</span>
+		<span class="label label-success">Account</span>
 		<span class="label label-warning">Invoice</span>
 	</div>
 	<div class="panel panel-primary">

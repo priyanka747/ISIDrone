@@ -21,10 +21,10 @@ public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Map <String, String> map = System.getenv();
-        for (Map.Entry <String, String> entry: map.entrySet()) {
-            System.out.println("Variable Name:- " + entry.getKey() + " Value:- " + entry.getValue());
-        }
+//		Map <String, String> map = System.getenv();
+//        for (Map.Entry <String, String> entry: map.entrySet()) {
+//            System.out.println("Variable Name:- " + entry.getKey() + " Value:- " + entry.getValue());
+//        }
 		//Récupération des catégories
 		ActionCategory.getActiveCategories(request, response);
 		//Récupération des produits en vedettes

@@ -35,7 +35,7 @@ public class ListOrders extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = MSession.getSession(request);
 		User user=(User)session.getAttribute("user");
-		System.out.println(user.getRole());
+//		System.out.println(user.getRole());
 		if (user.getRole().equalsIgnoreCase("admin")) {
 			ActionOrder.getOrders(request,response);
 			request.getRequestDispatcher(Const.PATH_PAGE_LIST_ORDERS).forward(request, response);
