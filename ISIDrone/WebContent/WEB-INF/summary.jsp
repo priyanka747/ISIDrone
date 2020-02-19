@@ -17,7 +17,7 @@
 <jsp:include page="<%=Const.PATH_MENU_JSP%>"/>
 <div class="container">
 	<div class="progress-cart">
-		<span class="label label-success">Basket</span>
+		<span class="label label-success">Cart</span>
 		<span class="label label-success">Summary</span>
 		<span class="label label-warning">Account</span>
 		<span class="label label-warning">Invoice</span>

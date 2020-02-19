@@ -47,7 +47,7 @@ if(categories.size() > 0) {
 		<td>
 		
 		<a class="btn btn-primary" href="add-category?a=1&category_id=<%= category.getId() %>" role="button" >Modify</a>
-		<a class="btn btn-outline-danger" href="add-category?a=2&category_id=<%= category.getId() %>" onclick="return confirm('Are you sure you want to delete this category?');" role="button">Remove</a>
+		<a class="btn btn-danger" href="add-category?a=2&category_id=<%= category.getId() %>" onclick="return confirm('Are you sure you want to delete this category?');" role="button">Remove</a>
 		
 		</td>
 		</tr>

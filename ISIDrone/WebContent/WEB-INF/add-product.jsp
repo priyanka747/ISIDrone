@@ -214,7 +214,7 @@
 			%>
 			<div class="form-group text-center "
 				style="clear: left; top: 15px; margin-bottom: 15px;">
-				<button type="submit" class="btn btn-default">Add..</button>
+				<button type="submit" class="btn btn-default"><%=item != null ? "Modify":"Add" %></button>
 			</div>
 		</div>
 	</form>

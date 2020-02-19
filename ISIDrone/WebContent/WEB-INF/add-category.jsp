@@ -21,10 +21,10 @@
 		if (request.getParameter("fromCart") != null) {
 	%>
 	<div class="progress-cart">
-		<span class="label label-success">Panier</span> <span
-			class="label label-success">Sommaire</span> <span
-			class="label label-warning">Compte</span> <span
-			class="label label-warning">Facture</span>
+		<span class="label label-success">Cart</span> <span
+			class="label label-success">Summary</span> <span
+			class="label label-warning">Account</span> <span
+			class="label label-warning">Invoice</span>
 	</div>
 	<%
 		}
@@ -55,14 +55,7 @@
 		<div class="panel-body">
 			<fieldset class="col-sm-6 col-lg-6 col-md-6">
 				<legend>New category Information</legend>
-				<%
-					if (hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("lastName")) {
-				%>
-				<div class="alert alert-warning"
-					style="margin-bottom: 0px; white-space: pre-line;"><%=hm_fieldErrorMsg.get("lastName")%></div>
-				<%
-					}
-				%>
+				
 				<div class="form-group">
 					<div class="col-sm-10">
 						<label for="Name" class="col-sm-2 control-label">Name</label> <input
@@ -72,36 +65,21 @@
 					</div>
 				</div>
 				
-				<%
-					if (hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("email")) {
-				%>
-				<div class="alert alert-warning"
-					style="margin-bottom: 0px; white-space: pre-line;"><%=hm_fieldErrorMsg.get("email")%></div>
-				<%
-					}
-				%>
 				<div class="form-group">
 					<div class="col-sm-10">
 						<label for="email" class="col-sm-2 control-label">Description</label>
-						<input type="email" id="email" class="form-control" name="email"
+						<input type="text" id="email" class="form-control" name="email"
 							value="<%=Misc.getOrDefault(hm_formParamValue, "email", "")%>"
 							required />
 					</div>
 				</div>
 				
-				<%
-					if (hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("confirmEmail")) {
-				%>
-				<div class="alert alert-warning"
-					style="margin-bottom: 0px; white-space: pre-line;"><%=hm_fieldErrorMsg.get("confirmEmail")%></div>
-				<%
-					}
-				%>
+				
 				<div class="form-group">
 					<div class="col-sm-10">
 						<label for="confirmEmail" class="col-sm-2 control-label"
 							style="padding-top: 0px;">order </label> <input
-							type="email" id="confirmEmail" class="form-control"
+							type="number" id="confirmEmail" class="form-control" step="1"
 							name="confirmEmail" placeholder=""
 							value="<%=Misc.getOrDefault(hm_formParamValue, "confirmEmail", "")%>"
 							required />
@@ -112,17 +90,9 @@
 			<fieldset class="col-sm-6 col-lg-6 col-md-6">
 				<legend>category Details</legend>
 				
-				<%
-					if (hm_fieldErrorMsg != null && hm_fieldErrorMsg.containsKey("confirmEmail")) {
-				%>
-				<div class="alert alert-warning"
-					style="margin-bottom: 0px; white-space: pre-line;"><%=hm_fieldErrorMsg.get("confirmEmail")%></div>
-				<%
-					}
-				%>
 				<div class="form-group login-group-checkbox">
-					<input id="remember" name="remember" type="checkbox"> <label
-						for="remember">do you want to make it live?</label>
+					<input id="isactive" name="isactive" type="checkbox"> <label
+						for="isactive">do you want to make it live?</label>
 				</div>
 			</fieldset>
 			<%

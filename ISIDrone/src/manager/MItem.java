@@ -18,7 +18,7 @@ public class MItem {
 			ResultSet rs;
 
 			if (category == 1) {
-				query = "SELECT * FROM product";
+				query = "SELECT *  FROM product WHERE status != 'delete'";
 				ps = MDB.getPS(query);
 			} else {
 				query = "SELECT * FROM product WHERE category = ?";
@@ -106,7 +106,7 @@ public class MItem {
 
 			try {
 				MDB.connect();
-				String query = "delete from product where id=?";
+				String query = "UPDATE `product` SET `status` = 'delete' WHERE `product`.`id` = ?";
 	
 				PreparedStatement ps = MDB.getPS(query);
 				ps.setInt(1, id);
