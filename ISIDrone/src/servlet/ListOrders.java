@@ -36,12 +36,12 @@ public class ListOrders extends HttpServlet {
 		HttpSession session = MSession.getSession(request);
 		User user=(User)session.getAttribute("user");
 		System.out.println(user.getRole());
-		if(user.getRole()!="admin") {
+		if (user.getRole().equalsIgnoreCase("admin")) {
+			ActionOrder.getOrders(request,response);
+			request.getRequestDispatcher(Const.PATH_PAGE_LIST_ORDERS).forward(request, response);
 			
-			response.sendError(403);
 		}else {
-		ActionOrder.getOrders(request,response);
-		request.getRequestDispatcher(Const.PATH_PAGE_LIST_ORDERS).forward(request, response);
+			response.sendError(403);
 		}
 	}
 

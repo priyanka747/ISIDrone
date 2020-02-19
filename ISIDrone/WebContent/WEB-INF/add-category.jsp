@@ -46,7 +46,7 @@
 		}
 	%>
 
-	<form action="signup" method="post"
+	<form action="#" method="post"
 		class="panel panel-primary form-horizontal"
 		style="float: unset; margin: auto;">
 		<div class="panel-heading">
