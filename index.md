@@ -10,7 +10,7 @@ Provide orders report with delivery status information such as delivered succesf
 
 ## Installation
 
-Use (https://github.com/priyanka747/ISIDrone.git) clone ISI-Drone.  
+Use (https://github.com/priyanka747/ISIDrone.git) clone ISIDrone.  
 Project is build and run with the Eclipse IDE
 
 ## Usage
