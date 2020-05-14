@@ -2,8 +2,6 @@ package util;
 
 import javax.naming.InitialContext;
 
-import org.omg.CORBA.Environment;
-
 public class Const {
 	
 	public static String COMP_NAME = "Isi Drone";
